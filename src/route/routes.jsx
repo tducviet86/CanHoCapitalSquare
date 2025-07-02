@@ -3,49 +3,16 @@
 
 
 
-// Student routes, chỉ cho role STUDENT
-export const HomeRoutes = [
+export const homeRoutes = [
     {
-        path: '/courses',
-        element: (
-            <ProtectedRoute
-                element={<MainLayout />}
-                allowedRoles={['student']}
-            />
-        ),
-        children: [
-            {
-                index: true,
-                element: <StudentCourse />,
-            },
-        ],
+        path: '/',
+        element: <MainLayout />,
+        children: [{ index: true, element: <Home /> }],
     },
     {
-        path: '/courses/:courseId',
-        element: (
-            <ProtectedRoute
-                element={<CourseDetail />}
-                allowedRoles={['student']}
-            />
-        ),
+        path: '*',
+        element: <PageNotFound />,
     },
 ]
 
-// Profile routes, mọi user đã đăng nhập đều có thể truy cập, bạn có thể mở rộng kiểm soát roles nếu cần
-export const profileRoutes = [
-    {
-        path: '/profile',
-        element: (
-            <ProtectedRoute
-                element={<ProfieLayout />}
-                allowedRoles={['admin', 'teacher', 'student']}
-            />
-        ),
-        children: [
-            {
-                index: true,
-                element: <ProfileUser />,
-            },
-        ],
-    },
-]
+
