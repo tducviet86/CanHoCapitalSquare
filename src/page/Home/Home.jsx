@@ -1,9 +1,5 @@
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { MapPin, Phone, Mail, Facebook, Youtube } from "lucide-react"
+import { LocationOn, Phone, Email, Facebook, YouTube } from "@mui/icons-material"
 
 export default function CapitalSquarePage() {
   return (
@@ -27,7 +23,9 @@ export default function CapitalSquarePage() {
                 Tọa lạc tại vị trí đắc địa bên bờ sông Hàn thơ mộng, Capital Square không chỉ là nơi an cư mà còn là
                 biểu tượng của sự thịnh vượng và đẳng cấp sống hiện đại.
               </p>
-              <Button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg">Tìm hiểu thêm</Button>
+              <button className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 text-lg rounded-md font-medium transition-colors duration-200">
+                Tìm hiểu thêm
+              </button>
             </div>
           </div>
         </div>
@@ -292,18 +290,18 @@ export default function CapitalSquarePage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {["Vị trí đắc địa", "Thiết kế hiện đại", "Tiện ích đẳng cấp", "An ninh 24/7"].map((advantage, index) => (
-              <Card key={index} className="bg-white text-gray-900">
-                <CardContent className="p-6">
+              <div key={index} className="bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden">
+                <div className="p-6">
                   <Image
                     src="/placeholder.svg?height=200&width=300"
                     alt={advantage}
                     width={300}
                     height={200}
-                    className="rounded-lg mb-4"
+                    className="rounded-lg mb-4 w-full"
                   />
                   <h3 className="font-bold text-lg">{advantage}</h3>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
         </div>
@@ -314,14 +312,14 @@ export default function CapitalSquarePage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">ĐĂNG KÝ NHẬN THÔNG TIN</h2>
-            <Card className="bg-white shadow-xl">
-              <CardContent className="p-8">
+            <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+              <div className="p-8">
                 <div className="grid md:grid-cols-2 gap-8">
                   <div>
                     <h3 className="text-xl font-bold text-blue-900 mb-6">Liên hệ với chúng tôi</h3>
                     <div className="space-y-4">
                       <div className="flex items-center">
-                        <MapPin className="w-5 h-5 text-orange-500 mr-3" />
+                        <LocationOn className="w-5 h-5 text-orange-500 mr-3" />
                         <span className="text-gray-700">123 Đường ABC, Quận Hải Châu, Đà Nẵng</span>
                       </div>
                       <div className="flex items-center">
@@ -329,27 +327,48 @@ export default function CapitalSquarePage() {
                         <span className="text-gray-700">0123 456 789</span>
                       </div>
                       <div className="flex items-center">
-                        <Mail className="w-5 h-5 text-orange-500 mr-3" />
+                        <Email className="w-5 h-5 text-orange-500 mr-3" />
                         <span className="text-gray-700">info@capitalsquare.vn</span>
                       </div>
                     </div>
                     <div className="flex space-x-4 mt-6">
-                      <Facebook className="w-6 h-6 text-blue-600 cursor-pointer hover:text-blue-800" />
-                      <Youtube className="w-6 h-6 text-red-600 cursor-pointer hover:text-red-800" />
+                      <Facebook className="w-6 h-6 text-blue-600 cursor-pointer hover:text-blue-800 transition-colors" />
+                      <YouTube className="w-6 h-6 text-red-600 cursor-pointer hover:text-red-800 transition-colors" />
                     </div>
                   </div>
                   <div>
                     <form className="space-y-4">
-                      <Input placeholder="Họ và tên *" className="w-full" />
-                      <Input placeholder="Số điện thoại *" className="w-full" />
-                      <Input placeholder="Email" className="w-full" />
-                      <Textarea placeholder="Nội dung tin nhắn" className="w-full h-24" />
-                      <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white">Gửi thông tin</Button>
+                      <input
+                        type="text"
+                        placeholder="Họ và tên *"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      />
+                      <input
+                        type="tel"
+                        placeholder="Số điện thoại *"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      />
+                      <input
+                        type="email"
+                        placeholder="Email"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
+                      />
+                      <textarea
+                        placeholder="Nội dung tin nhắn"
+                        rows="4"
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
+                      ></textarea>
+                      <button
+                        type="submit"
+                        className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md font-medium transition-colors duration-200"
+                      >
+                        Gửi thông tin
+                      </button>
                     </form>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </div>
         </div>
       </section>
