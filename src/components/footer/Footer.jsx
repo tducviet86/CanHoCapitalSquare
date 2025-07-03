@@ -63,21 +63,6 @@ function Footer() {
           Copyright©2025. Capital Square. All rights reserved.
         </div>
   
-        {/* Floating icons */}
-        <div className="absolute right-4 bottom-4 space-y-3 flex flex-col items-end">
-          <a href="#" className="bg-orange-500 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
-            <img src="/icons/youtube.svg" alt="YouTube" className="w-5 h-5" />
-          </a>
-          <a href="#" className="bg-orange-500 rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
-            <img src="/icons/linkedin.svg" alt="LinkedIn" className="w-5 h-5" />
-          </a>
-          <a href="#" className="bg-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg">
-            <img src="/icons/download.svg" alt="Download" className="w-5 h-5" />
-          </a>
-          <button className="mt-2 bg-white text-[#002E6D] px-4 py-2 rounded-full font-semibold shadow-lg">
-            Đăng ký nhận tư vấn
-          </button>
-        </div>
       </footer>
     )
   }

@@ -1,134 +1,110 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '@mantine/core/styles.css';
+
+@import "tailwindcss";
 
 html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-
 body {
-  line-height: 1;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+        Helvetica Neue, sans-serif;
 }
 
-ol,
-ul {
-  list-style: none;
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-blockquote,
-q {
-  quotes: none;
+* {
+    box-sizing: border-box;
 }
 
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Smooth transitions */
+.transition-all {
+    transition: all 0.3s ease;
+}
+
+/* Custom spacing utilities */
+.space-y-3>*+* {
+    margin-top: 0.75rem;
+}
+
+.space-y-4>*+* {
+    margin-top: 1rem;
+}
+
+.space-x-2>*+* {
+    margin-left: 0.5rem;
+}
+
+/* Hover effects */
+.hover\:scale-105:hover {
+    transform: scale(1.05);
+}
+
+.hover\:bg-orange-600:hover {
+    background-color: #ea580c;
+}
+
+.hover\:text-blue-800:hover {
+    color: #1e40af;
+}
+
+.hover\:text-red-800:hover {
+    color: #991b1b;
+}
+
+/* Duration utilities */
+.duration-300 {
+    transition-duration: 300ms;
+}
+
+/* Custom MUI overrides */
+.MuiCard-root {
+    transition: transform 0.3s ease !important;
+}
+
+.MuiIconButton-root {
+    transition: color 0.3s ease !important;
+}
+
+/* Background gradients */
+.bg-gradient-to-r {
+    background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.from-blue-900 {
+    --tw-gradient-from: #1e3a8a;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(30, 58, 138, 0));
+}
+
+.to-blue-700 {
+    --tw-gradient-to: #1d4ed8;
+}
+
+.from-pink-100 {
+    --tw-gradient-from: #fce7f3;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(252, 231, 243, 0));
+}
+
+.to-blue-100 {
+    --tw-gradient-to: #dbeafe;
 }
