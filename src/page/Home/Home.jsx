@@ -5,6 +5,11 @@ import {
   Facebook,
   YouTube,
 } from "@mui/icons-material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export default function CapitalSquarePage() {
   return (
@@ -108,7 +113,7 @@ export default function CapitalSquarePage() {
       </section>
 
       {/* Location Section */}
-      <div>
+      <div className="mb-20">
         {/* Section 1 */}
         <section className="pb-20 bg-white relative z-10">
           <div className="container mx-auto px-4">
@@ -252,163 +257,225 @@ export default function CapitalSquarePage() {
             }}
           />
         </section>
+
+        <div className="w-full flex justify-end">
+          <section className=" relative -mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-[85%] z-20 rounded-tr-[20%]">
+            {/* Left image */}
+            <div className=" h-full">
+              <img
+                src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-3.png"
+                alt="Bản đồ minh đường tụ thủy"
+                className="object-cover w-full h-full"
+              />
+            </div>
+
+            {/* Right content */}
+            <div className="w-full flex justify-end">
+              <div className="bg-[#e8e8e8] p-8 lg:pt-12 lg:pr-40 lg:pb-12 lg:pl-[100px] flex flex-col justify-center rounded-tr-[20%] text-right">
+                <h2 className="text-[#2B5192] text-[40px] lg:text-3xl font-bold uppercase mb-4 font-['Roboto-ExtraLight']">
+                  Địa Thế
+                </h2>
+                <h3 className="text-[#F47920] text-[40px] lg:text-2xl font-bold uppercase mb-6 font-['Roboto-Medium']">
+                  "Minh đường tụ thủy"
+                </h3>
+                <p className="text-base leading-relaxed text-[#212529] mb-6  font-medium">
+                  Sở hữu vị trí độc tôn bên dòng sông Hàn, với thế tựa núi –
+                  hướng thủy đắc địa, Capital Square có hội tụ những năng lượng
+                  mạnh mẽ đến từ vượng khí đất trời và dòng sinh khí thịnh vượng
+                  của sông Hàn.
+                  <br />
+                  Tọa lạc ở giao điểm phồn vinh bậc nhất của thành phố – trái
+                  tim hành chính – kinh tế - văn hóa của Thành phố Đà Nẵng
+                  (đường Trần Phú – Nguyễn Công Trứ – Ngô Quyền), Capital Square
+                  xứng tầm kiến tạo nên một điểm đến hội tụ mọi thế mạnh nhất về
+                  vượng khí, năng lượng sinh tài lộc và hình thái.
+                </p>
+
+                <div className="grid grid-cols-2 gap-8 text-right max-w-4xl ml-auto">
+                  <div className="space-y-8">
+                    <div>
+                      <div className="text-[#f37021] text-2xl font-bold mb-2 border-b-2 border-[#f37021] inline-block pb-1">
+                        0 PHÚT
+                      </div>
+                      <div className="text-gray-800 font-medium">
+                        SÔNG HÀN
+                        <br />
+                        VINCOM PLAZA ĐÀ NẴNG
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="text-[#f37021] text-2xl font-bold mb-2 border-b-2 border-[#f37021] inline-block pb-1">
+                        15 PHÚT
+                      </div>
+                      <div className="text-gray-800 font-medium mt-2">
+                        SÂN BAY QUỐC TẾ ĐÀ NẴNG
+                        <br />
+                        NÚI NGŨ HÀNH SƠN
+                        <br />
+                        BÁN ĐẢO SƠN TRÀ
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div className="text-[#f37021] text-2xl font-bold mb-2 border-b-2 border-[#f37021] inline-block pb-1">
+                      05 PHÚT
+                    </div>
+                    <div className="text-gray-800 font-medium leading-relaxed text-right">
+                      CẦU RỒNG
+                      <br />
+                      CHỢ CỒN
+                      <br />
+                      BẢO TÀNG ĐÀ NẴNG
+                      <br />
+                      BỆNH VIỆN ĐÀ NẴNG
+                      <br />
+                      TRUNG TÂM ĐÀ NẴNG
+                      <br />
+                      BÃI BIỂN MỸ KHÊ
+                      <br />
+                      CÔNG VIÊN APEC
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right column */}
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
 
-      {/* Map Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img
-                src="https://capitalsquare.vn/images/section-1.png"
-                alt="Detailed Location Map"
-                width={600}
-                height={500}
-                className="rounded-lg shadow-lg"
-              />
-            </div>
-            <div>
-              <div className="bg-blue-900 text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-4">
-                  ĐA THẾ
-                  <br />
-                  "MINH HƯỚNG
-                  <br />
-                  TỰ THÂN"
-                </h3>
-                <p className="leading-relaxed mb-6">
-                  Capital Square được thiết kế với đa dạng hướng view, mỗi căn
-                  hộ đều có tầm nhìn đẹp ra sông Hàn, thành phố hoặc biển. Điều
-                  này đảm bảo mọi cư dân đều được tận hưởng không gian sống
-                  thoáng đãng và ánh sáng tự nhiên tối ưu.
-                </p>
-                <div className="space-y-2 text-sm">
-                  <p>
-                    <strong>Địa chỉ:</strong> 123 Đường ABC, Quận Hải Châu, Đà
-                    Nẵng
-                  </p>
-                  <p>
-                    <strong>Hotline:</strong> 0123 456 789
-                  </p>
-                  <p>
-                    <strong>Email:</strong> info@capitalsquare.vn
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div className="relative w-full h-[1000px] overflow-hidden">
+        <div className="flex h-[100vh]">
+          <div className="w-[56%] h-[1000px] relative">
+            <div
+              className="object-cover h-[1000px]"
+              style={{
+                backgroundImage:
+                  "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-3-1.png')",
+                height: "1000px",
+              }}
+            />
+            {/* Orange accent line */}
+            <div className="absolute left-0 top-0 w-1 h-full bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600"></div>
+            <div className="absolute left-8 top-1/2 -translate-y-1/2 w-0.5 h-32 bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600"></div>
 
-      {/* Amenities Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="border-l-4 border-orange-500 pl-6 mb-8">
-                <h2 className="text-4xl font-bold text-blue-900 mb-6">
-                  TIỆN ÍCH
-                  <br />
-                  ĐẲNG CẤP RESORT
-                  <br />
-                  PHONG CÁCH
-                  <br />
-                  SỐNG HIỆN ĐẠI
-                </h2>
-              </div>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Capital Square mang đến cho cư dân một hệ thống tiện ích đẳng
-                cấp 5 sao với đầy đủ các dịch vụ từ giải trí, thể thao đến chăm
-                sóc sức khỏe và giáo dục.
+            {/* Text Content */}
+            <div className="absolute left-70 top-70 -translate-y-1/2 text-white z-10 ">
+              <h2 className="text-4xl font-bold mb-2 tracking-wider">
+                TIỆN ÍCH
+              </h2>
+              <h3 className="text-2xl font-bold text-orange-400 mb-6 leading-tight">
+                TUYẾN NGÔN
+                <br />
+                PHONG CÁCH
+                <br />
+                SỐNG ĐẲNG CẤP
+              </h3>
+              <p className="text-sm leading-relaxed max-w-xs opacity-90">
+                Những tiện ích đẳng cấp giao thoa hòa
+                <br />
+                hợp với thiên nhiên tạo nên sự thoải mái,
+                <br />
+                Capital Square được thiết kế để tạo nên một
+                <br />
+                không gian sống lý tưởng, nơi cư dân có thể
+                <br />
+                tận hưởng cuộc sống với những tiện nghi
+                <br />
+                thoải mái nghỉ ngơi mang phong cách thời
+                <br />
+                thượng, đẳng cấp và hiện đại trong một
+                <br />
+                không gian sống xanh.
               </p>
-              <ul className="space-y-3 text-gray-700">
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  Hồ bơi vô cực tầng thượng
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  Phòng gym & spa cao cấp
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  Khu vui chơi trẻ em
-                </li>
-                <li className="flex items-center">
-                  <div className="w-2 h-2 bg-orange-500 rounded-full mr-3"></div>
-                  Hệ thống an ninh 24/7
-                </li>
-              </ul>
-            </div>
-            <div className="relative">
-              <img
-                src="https://capitalsquare.vn/images/section-1.png"
-                alt="Luxury Amenities"
-                width={600}
-                height={500}
-                className="rounded-lg shadow-xl"
-              />
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Building Specifications */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="relative">
-              <img
-                src="https://capitalsquare.vn/images/section-1.png"
-                alt="Building Architecture"
-                width={600}
-                height={500}
-                className="rounded-lg shadow-xl"
-              />
-            </div>
-            <div>
-              <div className="bg-blue-900 text-white p-8 rounded-lg">
-                <h3 className="text-2xl font-bold mb-6">
-                  BIỂU TƯỢNG
-                  <br />
-                  KIẾN TRÚC ĐỘC BẢN
-                </h3>
-                <div className="grid grid-cols-2 gap-6 mb-6">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-500 mb-2">
-                      25
-                    </div>
-                    <div className="text-sm">TẦNG</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-500 mb-2">
-                      500
-                    </div>
-                    <div className="text-sm">CĂN HỘ</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-500 mb-2">
-                      2-4
-                    </div>
-                    <div className="text-sm">PHÒNG NGỦ</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-orange-500 mb-2">
-                      100%
-                    </div>
-                    <div className="text-sm">VIEW SÔNG</div>
-                  </div>
-                </div>
-                <p className="text-sm leading-relaxed">
-                  Thiết kế hiện đại với kiến trúc độc đáo, Capital Square là
-                  biểu tượng mới của thành phố Đà Nẵng với tầm nhìn panorama 360
-                  độ tuyệt đẹp.
-                </p>
+          {/* Right Half - Gray Background */}
+          <div className="w-1/2 h-[1000px] bg-[#e8e8e8]"></div>
+        </div>
+
+        {/* Overlaid Yacht Image */}
+        <div className="absolute left-[70%] top-95 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[650px] z-20">
+          <img
+            src="https://capitalsquare.vn/images/section-3-1-slider-1.png"
+            alt="Luxury yacht at marina"
+            fill
+            className="object-cover rounded-tr-[20%] w-[100%] h-[100%] "
+            priority
+          />
+        </div>
+      </div>
+      <div className="w-full flex justify-end">
+        <section className=" relative -mt-[200px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-[85%] z-20 rounded-tr-[20%]">
+          <div className=" h-[100%]  ">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 2000 }}
+              loop
+            >
+              <SwiperSlide>
+                <img
+                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full rounded-tl-[20%]"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full rounded-tl-[20%]"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full rounded-tl-[20%]"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+          <div className="w-full flex justify-end">
+            <div className="bg-[#2B5192] lg:pt-12 lg:pr-40  lg:pl-[80px] flex flex-col justify-center rounded-tr-[20%] text-right">
+              <h2 className="text-[#fff] text-[56px]   uppercase mb-4 font-['Roboto-Light']">
+                BIỂU TƯỢNG <br />
+                KIẾN TRÚC
+                <br />
+                ĐỘC BẢN
+              </h2>
+
+              <p className="max-w-md mx-auto text-[19.2px] md:text-sm font-bold font-['Roboto'] leading-relaxed mb-8 text-[#fff] ">
+                Capital Square như những cánh buồm căng gió vươn mình trên dòng
+                sông Hàn, hòa quyện giữa nét cong mềm mại của dòng nước và ánh
+                nắng rực rỡ trên mặt kính sống động.
+              </p>
+
+              {/* Dòng tiêu đề nổi bật cam */}
+              <div className="text-[#F47920] text-[51.2px] font-bold leading-snug uppercase tracking-wide space-y-1">
+              THÔNG SỐ <br/>
+              CÁC CĂN <br/>
+              & MẶT BẰNG <br/>
+              ĐIỂN HÌNH <br/>
+              THUỘC DỰ ÁN <br/>
+              </div>
+
+              {/* Button */}
+              <div className="mt-8 text-center justify-end">
+                <button className="bg-white text-center text-[#174a8b] border-1 border-red-500 rounded-full  px-6 py-2 text-sm font-medium hover:bg-[#f37021] hover:text-white transition">
+                  TÌM HIỂU THÊM
+                </button>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Gallery Section */}
       <section className="py-20 bg-white">
