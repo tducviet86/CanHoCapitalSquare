@@ -10,6 +10,9 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Gallery from "../Gallery/Gallery";
+import CapitalSquareSection from "../Capital/CapitalSquare";
+import RegisterForm from "../Register/RegisterForm";
 
 export default function CapitalSquarePage() {
   return (
@@ -459,11 +462,11 @@ export default function CapitalSquarePage() {
 
               {/* Dòng tiêu đề nổi bật cam */}
               <div className="text-[#F47920] text-[51.2px] font-bold leading-snug uppercase tracking-wide space-y-1">
-              THÔNG SỐ <br/>
-              CÁC CĂN <br/>
-              & MẶT BẰNG <br/>
-              ĐIỂN HÌNH <br/>
-              THUỘC DỰ ÁN <br/>
+                THÔNG SỐ <br />
+                CÁC CĂN <br />
+                & MẶT BẰNG <br />
+                ĐIỂN HÌNH <br />
+                THUỘC DỰ ÁN <br />
               </div>
 
               {/* Button */}
@@ -477,147 +480,16 @@ export default function CapitalSquarePage() {
         </section>
       </div>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
-            GALLERY
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
-              <div
-                key={item}
-                className="relative group overflow-hidden rounded-lg"
-              >
-                <img
-                  src="https://capitalsquare.vn/images/section-1.png"
-                  alt={`Gallery img ${item}`}
-                  width={400}
-                  height={300}
-                  className="object-cover transition-transform group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all"></div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <div>
+        <Gallery />
+      </div>
+      <div>
+        <CapitalSquareSection />
+      </div>
 
-      {/* Advantages Section */}
-      <section className="py-20 bg-blue-900 text-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <div className="inline-block bg-orange-500 p-4 rounded-lg mb-6">
-              <span className="text-2xl font-bold">8</span>
-            </div>
-            <h2 className="text-3xl font-bold mb-4">
-              LỢI ĐIỂM
-              <br />
-              CHỈ CÓ TẠI
-              <br />
-              <span className="text-orange-500">CAPITAL SQUARE</span>
-            </h2>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              "Vị trí đắc địa",
-              "Thiết kế hiện đại",
-              "Tiện ích đẳng cấp",
-              "An ninh 24/7",
-            ].map((advantage, index) => (
-              <div
-                key={index}
-                className="bg-white text-gray-900 rounded-lg shadow-lg overflow-hidden"
-              >
-                <div className="p-6">
-                  <img
-                    src="https://capitalsquare.vn/images/section-1.png"
-                    alt={advantage}
-                    width={300}
-                    height={200}
-                    className="rounded-lg mb-4 w-full"
-                  />
-                  <h3 className="font-bold text-lg">{advantage}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-20 bg-gradient-to-r from-pink-100 to-blue-100">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center text-blue-900 mb-12">
-              ĐĂNG KÝ NHẬN THÔNG TIN
-            </h2>
-            <div className="bg-white shadow-xl rounded-lg overflow-hidden">
-              <div className="p-8">
-                <div className="grid md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-bold text-blue-900 mb-6">
-                      Liên hệ với chúng tôi
-                    </h3>
-                    <div className="space-y-4">
-                      <div className="flex items-center">
-                        <LocationOn className="w-5 h-5 text-orange-500 mr-3" />
-                        <span className="text-gray-700">
-                          123 Đường ABC, Quận Hải Châu, Đà Nẵng
-                        </span>
-                      </div>
-                      <div className="flex items-center">
-                        <Phone className="w-5 h-5 text-orange-500 mr-3" />
-                        <span className="text-gray-700">0123 456 789</span>
-                      </div>
-                      <div className="flex items-center">
-                        <Email className="w-5 h-5 text-orange-500 mr-3" />
-                        <span className="text-gray-700">
-                          info@capitalsquare.vn
-                        </span>
-                      </div>
-                    </div>
-                    <div className="flex space-x-4 mt-6">
-                      <Facebook className="w-6 h-6 text-blue-600 cursor-pointer hover:text-blue-800 transition-colors" />
-                      <YouTube className="w-6 h-6 text-red-600 cursor-pointer hover:text-red-800 transition-colors" />
-                    </div>
-                  </div>
-                  <div>
-                    <form className="space-y-4">
-                      <input
-                        type="text"
-                        placeholder="Họ và tên *"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
-                      <input
-                        type="tel"
-                        placeholder="Số điện thoại *"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
-                      <input
-                        type="email"
-                        placeholder="Email"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent"
-                      />
-                      <textarea
-                        placeholder="Nội dung tin nhắn"
-                        rows="4"
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent resize-none"
-                      ></textarea>
-                      <button
-                        type="submit"
-                        className="w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-md font-medium transition-colors duration-200"
-                      >
-                        Gửi thông tin
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <div>
+        <RegisterForm />
+      </div>
     </main>
   );
 }
