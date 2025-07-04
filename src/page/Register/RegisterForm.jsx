@@ -76,10 +76,10 @@ export default function RegisterForm() {
   };
 
   return (
-    <section className="bg-gray-100 py-16 px-4">
+    <section id="contact" className="bg-gray-100 py-16 px-4">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-blue-900 uppercase mb-10">
-          Đăng ký nhận thông tin
+          Để lại thông tin tư vấn
         </h2>
 
         <form className="grid gap-6" onSubmit={handleSubmit}>

@@ -23,7 +23,7 @@ export default function Gallery() {
   const fallbackThumbnail = "/fallback-thumbnail.jpg"; // thêm ảnh tĩnh dự phòng vào public nếu muốn
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div id="library-image" className="min-h-screen bg-white p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">

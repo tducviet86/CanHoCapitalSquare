@@ -1,10 +1,3 @@
-import {
-  LocationOn,
-  Phone,
-  Email,
-  Facebook,
-  YouTube,
-} from "@mui/icons-material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -13,8 +6,12 @@ import "swiper/css/pagination";
 import Gallery from "../Gallery/Gallery";
 import CapitalSquareSection from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
+import FloatingContactWidget from "../../components/Floating/floatting-icon";
+
+import { useState } from "react";
 
 export default function CapitalSquarePage() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <main className="min-h-screen bg-white">
       <section className="relative h-screen bg-gradient-to-r from-blue-900 to-blue-700">
@@ -55,7 +52,7 @@ export default function CapitalSquarePage() {
               }}
             >
               <div className="absolute top-6 right-6">
-                <div className="w-8 h-8 flex items-center justify-center">
+                <div className="w-12 h-12 flex items-center justify-center">
                   <img
                     src="https://capitalsquare.vn/images/section-1-logo.png"
                     alt="logo"
@@ -72,7 +69,7 @@ export default function CapitalSquarePage() {
                   <br />
                   CỦA ĐÀ NẴNG
                 </h2>
-                <p className="text-white text-sm leading-relaxed">
+                <p className="text-white text-sm leading-relaxed text-right">
                   VƯƠN MÌNH KHẲNG ĐỊNH VỊ THẾ GIỮA TRUNG TÂM THÀNH PHỐ
                   <br />
                   ĐÁNG SỐNG ĐÀ NẴNG
@@ -84,44 +81,68 @@ export default function CapitalSquarePage() {
               </div>
             </div>
 
-            {/* Right Image Box */}
-            <div className="relative rounded-tr-[80px]">
-              <iframe
-                className="absolute inset-0 w-full h-full z-10 rounded-tr-[80px]"
-                src="https://www.youtube.com/embed/cytDlTrgkVY?autoplay=1"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-              ></iframe>
+            <div className="relative rounded-tr-[80px] overflow-hidden h-[300px]">
+              <img
+                src="https://img.youtube.com/vi/cytDlTrgkVY/maxresdefault.jpg"
+                alt="Video Thumbnail"
+                className="absolute inset-0 w-full h-full object-cover z-0 rounded-tr-[80px]"
+              />
 
               <div className="absolute inset-0 bg-black bg-opacity-10 rounded-tr-[80px]" />
 
-              {/* Play button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <button className="w-16 h-16 flex items-center justify-center text-gray-800 hover:scale-105 transition-transform duration-200 shadow-lg">
-                  <div className="w-0 h-0 border-l-[12px] border-l-gray-800 border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="w-16 h-16 flex items-center justify-center text-gray-800 hover:scale-105 transition-transform duration-200 shadow-lg bg-white rounded-full"
+                >
+                  <div className="w-0 h-0 border-l-[16px] border-l-gray-800 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
                 </button>
               </div>
 
-              {/* Video text */}
-              <div className="absolute bottom-6 right-6 rounded-tr-[80px]">
-                <span className="text-white text-sm font-medium underline cursor-pointer hover:text-orange-300 transition-colors z-15">
+              <div className="absolute bottom-6 right-6 z-10">
+                <span
+                  onClick={() => setShowModal(true)}
+                  className="text-white text-sm font-medium underline cursor-pointer hover:text-orange-300 transition-colors"
+                >
                   XEM VIDEO DỰ ÁN
                 </span>
               </div>
+
+              {showModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
+                  <div
+                    className="absolute inset-0   backdrop-blur-none"
+                    onClick={() => setShowModal(false)}
+                  />
+
+                  <div className="relative bg-white rounded-2xl overflow-hidden shadow-2xl max-w-4xl w-full aspect-video z-50">
+                    <iframe
+                      src="https://www.youtube.com/embed/cytDlTrgkVY?autoplay=1"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="autoplay; encrypted-media"
+                      allowFullScreen
+                      className="w-full h-full"
+                    ></iframe>
+
+                    <button
+                      onClick={() => setShowModal(false)}
+                      className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-3xl shadow-md hover:bg-red-600 transition"
+                    >
+                     <span className="text-3xl"> &times;</span>
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Location Section */}
-      <div className="mb-20">
-        {/* Section 1 */}
+      <div id="introduce" className="mb-20">
         <section className="pb-20 bg-white relative z-10">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {/* Cột trái - tiêu đề + mô tả */}
               <div>
                 <h4 className="text-[#F47920] text-4xl pl-[10%] uppercase leading-[1.5] font-light">
                   Vị thế
@@ -255,15 +276,13 @@ export default function CapitalSquarePage() {
             style={{
               backgroundImage:
                 "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-2.png')",
-              // hieght:"200%",
               backgroundPosition: "center 33%",
             }}
           />
         </section>
 
-        <div className="w-full flex justify-end">
+        <div id="location" className="w-full flex justify-end">
           <section className=" relative -mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-[85%] z-20 rounded-tr-[20%]">
-            {/* Left image */}
             <div className=" h-full">
               <img
                 src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-3.png"
@@ -272,7 +291,6 @@ export default function CapitalSquarePage() {
               />
             </div>
 
-            {/* Right content */}
             <div className="w-full flex justify-end">
               <div className="bg-[#e8e8e8] p-8 lg:pt-12 lg:pr-40 lg:pb-12 lg:pl-[100px] flex flex-col justify-center rounded-tr-[20%] text-right">
                 <h2 className="text-[#2B5192] text-[40px] lg:text-3xl font-bold uppercase mb-4 font-['Roboto-ExtraLight']">
@@ -341,15 +359,16 @@ export default function CapitalSquarePage() {
                     </div>
                   </div>
                 </div>
-
-                {/* Right column */}
               </div>
             </div>
           </section>
         </div>
       </div>
 
-      <div className="relative w-full h-[1000px] overflow-hidden">
+      <div
+        id="utilities"
+        className="relative w-full h-[1000px] overflow-hidden"
+      >
         <div className="flex h-[100vh]">
           <div className="w-[56%] h-[1000px] relative">
             <div
@@ -396,11 +415,9 @@ export default function CapitalSquarePage() {
             </div>
           </div>
 
-          {/* Right Half - Gray Background */}
           <div className="w-1/2 h-[1000px] bg-[#e8e8e8]"></div>
         </div>
 
-        {/* Overlaid Yacht Image */}
         <div className="absolute left-[70%] top-95 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[650px] z-20">
           <img
             src="https://capitalsquare.vn/images/section-3-1-slider-1.png"
@@ -411,7 +428,7 @@ export default function CapitalSquarePage() {
           />
         </div>
       </div>
-      <div className="w-full flex justify-end">
+      <div id="ground" className="w-full flex justify-end">
         <section className=" relative -mt-[200px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-[85%] z-20 rounded-tr-[20%]">
           <div className=" h-[100%]  ">
             <Swiper
@@ -490,6 +507,9 @@ export default function CapitalSquarePage() {
       <div>
         <RegisterForm />
       </div>
+      {/* <div>
+        <FloatingContactWidget />
+      </div> */}
     </main>
   );
 }

@@ -16,13 +16,13 @@ function Header() {
                 </div>
             </div>
 
-            <div className="bg-white shadow-md py-4">
+            <div className="bg-white shadow-md py-5">
                 <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                    <nav className="flex space-x-6 text-blue-900 font-semibold text-sm uppercase">
-                        <a href="#">Giới thiệu</a>
-                        <a href="#">Vị trí</a>
-                        <a href="#">Tiện ích</a>
-                        <a href="#">Mặt bằng</a>
+                    <nav className="flex space-x-6 text-blue-900 font-semibold text-base uppercase">
+                        <a href="#introduce">Giới thiệu</a>
+                        <a href="#location">Vị trí</a>
+                        <a href="#utilities">Tiện ích</a>
+                        <a href="#ground">Mặt bằng</a>
                     </nav>
 
                     <a href="/" className="flex items-center">
@@ -34,9 +34,9 @@ function Header() {
                     </a>
 
                     <nav className="flex space-x-6 text-blue-900 font-semibold text-sm uppercase">
-                        <a href="#">Thư viện hình ảnh</a>
-                        <a href="#">Điểm nổi bật</a>
-                        <a href="#">Liên hệ</a>
+                        <a href="#library-image">Thư viện hình ảnh</a>
+                        <a href="#highlights">Điểm nổi bật</a>
+                        <a href="#contact">Liên hệ</a>
                     </nav>
                 </div>
             </div>
