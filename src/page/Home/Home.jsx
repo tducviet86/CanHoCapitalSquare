@@ -129,7 +129,7 @@ export default function CapitalSquarePage() {
                       onClick={() => setShowModal(false)}
                       className="absolute top-2 right-2 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-3xl shadow-md hover:bg-red-600 transition"
                     >
-                     <span className="text-3xl"> &times;</span>
+                      <span className="text-3xl"> &times;</span>
                     </button>
                   </div>
                 </div>
@@ -220,15 +220,16 @@ export default function CapitalSquarePage() {
           </div>
         </section>
 
-        <div className="relative w-[85%] h-[850px] -mt-10 -mb-135 z-20">
+        <div className="relative w-full h-[850px] -mt-10 -mb-135 z-20">
           <div
-            className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+            className="absolute inset-0 bg-no-repeat bg-center bg-contain"
             style={{
               backgroundImage:
                 "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-1.png')",
               backgroundSize: "100%",
-              height: "90%",
-              width: "130%",
+              // width: "130%",
+              // height: "90%",
+              // transform: "translateX(-15%)", 
               clipPath: "inset(0 25% 0 0)",
             }}
           />
@@ -261,7 +262,7 @@ export default function CapitalSquarePage() {
           </div>
 
           <div className="absolute bottom-20 text-white z-40 ">
-            <div className="text-white text-base text-bold uppercase pl-[40%] w-[800px] my-[80px] mx-[50px] leading-[1.5]">
+            <div className="text-white text-base text-bold uppercase pl-[50%] w-[800px] my-[80px] mx-[50px] leading-[1.5]">
               Capital Square
               <br />
               Là mạch nối quá khứ - hiện tại và tương lai, giữa thiên nhiên con
@@ -471,14 +472,14 @@ export default function CapitalSquarePage() {
                 ĐỘC BẢN
               </h2>
 
-              <p className="max-w-md mx-auto text-[19.2px] md:text-sm font-bold font-['Roboto'] leading-relaxed mb-8 text-[#fff] ">
+              <p className="max-w-md mx-auto text-[19.2px] md:text-xl font-bold font-['Roboto'] leading-relaxed mb-6 text-[#fff] ">
                 Capital Square như những cánh buồm căng gió vươn mình trên dòng
                 sông Hàn, hòa quyện giữa nét cong mềm mại của dòng nước và ánh
                 nắng rực rỡ trên mặt kính sống động.
               </p>
 
               {/* Dòng tiêu đề nổi bật cam */}
-              <div className="text-[#F47920] text-[51.2px] font-bold leading-snug uppercase tracking-wide space-y-1">
+              <div className="text-[#F47920] text-[50px] font-bold leading-snug uppercase tracking-wide space-y-1">
                 THÔNG SỐ <br />
                 CÁC CĂN <br />
                 & MẶT BẰNG <br />
@@ -507,9 +508,9 @@ export default function CapitalSquarePage() {
       <div>
         <RegisterForm />
       </div>
-      {/* <div>
+      <div>
         <FloatingContactWidget />
-      </div> */}
+      </div>
     </main>
   );
 }
