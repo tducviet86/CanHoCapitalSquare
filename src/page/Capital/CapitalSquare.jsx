@@ -55,48 +55,46 @@ export default function CapitalSquareCarousel() {
 
   return (
     <section
-      className="relative px-4 py-16 bg-cover bg-center text-white overflow-hidden"
+      className="relative py-16 bg-cover bg-center text-white overflow-hidden"
       style={{
         backgroundImage:
-          "linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-6-bg.png')",
+          "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-6-bg.png')",
       }}
     >
-      {/* Custom navigation buttons */}
+      {/* Navigation buttons */}
       <button
         onClick={scrollPrev}
-        className="absolute left-20 top-2/3 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full"
+        className="absolute left-4 sm:left-10 top-1/2 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 sm:p-3 rounded-full transition"
       >
-        <ChevronLeft />
+        <ChevronLeft fontSize="large" />
       </button>
       <button
         onClick={scrollNext}
-        className="absolute right-13 top-2/3 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 rounded-full"
+        className="absolute right-4 sm:right-10 top-1/2 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 sm:p-3 rounded-full transition"
       >
-        <ChevronRight />
+        <ChevronRight fontSize="large" />
       </button>
 
-      {/* Carousel wrapper */}
+      {/* Carousel */}
       <div
-        className="overflow-hidden w-full max-w-screen-xl mt-100 mb-5 ml-15 px-4 "
+        className="overflow-hidden w-full max-w-7xl mx-auto px-4 sm:px-6"
         ref={emblaRef}
       >
-        <div className="flex gap-6">
+        <div className="flex gap-4 sm:gap-6">
           {slides.map((item) => (
-           <div
-           key={item.id}
-           className="relative flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 max-w-full rounded-xl overflow-hidden group"
-         >
-           <img
-             src={item.img}
-             alt={item.title}
-             className="w-full h-full object-cover rounded-[15px]  "
-           />
-           <div className="absolute bottom-10 left-0 right-0 p-4 ">
-             <p className="text-white font-semibold ">
-               {item.title}
-             </p>
-           </div>
-         </div>
+            <div
+              key={item.id}
+              className="relative flex-shrink-0 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-xl overflow-hidden group"
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-64 md:h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-3 text-sm sm:text-base font-medium text-center">
+                {item.title}
+              </div>
+            </div>
           ))}
         </div>
       </div>

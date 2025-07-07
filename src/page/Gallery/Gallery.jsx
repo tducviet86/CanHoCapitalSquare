@@ -20,28 +20,28 @@ export default function Gallery() {
 
   const youtubeId = "cytDlTrgkVY";
   const youtubeThumbnail = `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`;
-  const fallbackThumbnail = "/fallback-thumbnail.jpg"; // thêm ảnh tĩnh dự phòng vào public nếu muốn
+  const fallbackThumbnail = "/fallback-thumbnail.jpg";
 
   return (
-    <div id="library-image" className="min-h-screen bg-white p-8">
+    <div id="library-image" className="min-h-screen bg-white p-4 sm:p-6 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8">
-          <h1 className="text-4xl font-bold text-[#2B5192] tracking-wide">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8 gap-4">
+          <h1 className="text-3xl sm:text-4xl font-bold text-[#2B5192] tracking-wide">
             GALLERY
           </h1>
 
           {/* Navigation Tabs */}
-          <div className="flex border-b border-gray-200">
+          <div className="flex flex-col sm:flex-row border-b border-gray-200 w-full sm:w-auto">
             <button
               onClick={() => {
                 setActiveTab("images");
                 setVideoPlaying(false);
               }}
-              className={`px-6 py-3 text-xl  border-b-2 ${
+              className={`px-4 sm:px-6 py-2 text-base sm:text-xl border-b-2 transition ${
                 activeTab === "images"
                   ? "text-[#2B5192] font-bold border-[#2B5192]"
-                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-bold"
+                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-semibold"
               }`}
             >
               XEM HÌNH ẢNH DỰ ÁN
@@ -52,10 +52,10 @@ export default function Gallery() {
                 setActiveTab("video");
                 setVideoPlaying(false);
               }}
-              className={`ml-6 px-6 py-3 text-xl  border-b-2 ${
+              className={`px-4 sm:px-6 py-2 text-base sm:text-xl border-b-2 transition ${
                 activeTab === "video"
                   ? "text-[#2B5192] font-bold border-[#2B5192]"
-                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-bold"
+                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-semibold"
               }`}
             >
               XEM VIDEO DỰ ÁN
@@ -72,7 +72,7 @@ export default function Gallery() {
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}
               loop
-              className="h-[500px]"
+              className="h-[300px] sm:h-[400px] md:h-[500px]"
             >
               {images.map((img, index) => (
                 <SwiperSlide key={index}>
@@ -89,7 +89,7 @@ export default function Gallery() {
 
         {/* Video Preview */}
         {activeTab === "video" && (
-          <div className="relative bg-white rounded-lg overflow-hidden shadow-lg h-[500px] flex justify-center items-center">
+          <div className="relative bg-white rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[500px] flex justify-center items-center">
             {videoPlaying ? (
               <iframe
                 src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
@@ -111,7 +111,7 @@ export default function Gallery() {
                   }}
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center group-hover:bg-opacity-50 transition">
+                <div className="absolute inset-0  flex items-center justify-center group-hover:bg-opacity-50 transition">
                   <svg
                     className="w-16 h-16 text-white"
                     fill="currentColor"

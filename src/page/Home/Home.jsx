@@ -23,53 +23,50 @@ export default function CapitalSquarePage() {
             className="object-cover"
           />
         </div>
-        <div className="absolute top-[5%] left-[20%] z-10 text-white">
+        <div className="absolute top-[5%] left-[5%] md:left-[10%] lg:left-[20%] z-10 text-white px-4 md:px-0">
           <div>
-            <h1 className="text-[64px] font-extrabold ml-[-3%]  text-[#F47920] font-['Roboto-SemiBold']">
+            <h1 className="text-[24px] md:text-[40px] lg:text-[64px] font-extrabold ml-0 md:ml-[-2%] lg:ml-[-3%] text-[#F47920] font-['Roboto-SemiBold'] leading-tight">
               CAPITAL SQUARE
             </h1>
-            <p className="text-[64px] mt-[10px] leading-[1.1] ml-[220px]">
+            <p className="text-[24px] md:text-[40px] lg:text-[64px] mt-[10px] leading-[1.1] ml-0 md:ml-[100px] lg:ml-[220px]">
               Vị thế Phồn vinh
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bottom-30  relative overflow-hidden pt-8 pb-2">
-        <div className="w-[77%] mx-auto">
+      <section className="bottom-30 relative overflow-hidden pt-8 pb-2">
+        <div className="w-[95%] md:w-[85%] lg:w-[77%] mx-auto">
           <div
-            className="grid grid-cols-2 h-[300px]  overflow-hidden shadow-lg"
+            className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[300px] overflow-hidden shadow-lg"
             style={{
               boxShadow: "0 4px 6px rgba(0, 0, 0, 0.5)",
             }}
           >
             <div
-              className=" text-white relative flex flex-col justify-center px-8 rounded-tl-2xl rounded-bl-xl"
+              className="text-white relative flex flex-col justify-center px-4 md:px-8 py-8 md:py-0 rounded-tl-2xl rounded-tr-2xl md:rounded-tr-none rounded-bl-xl md:rounded-bl-xl min-h-[250px] md:min-h-0"
               style={{
                 backgroundImage: `url("https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-1-1.png")`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div className="absolute top-6 right-6">
-                <div className="w-12 h-12 flex items-center justify-center">
-                  <img
-                    src="https://capitalsquare.vn/images/section-1-logo.png"
-                    alt="logo"
-                  />
+              <div className="absolute top-4 md:top-6 right-4 md:right-6">
+                <div className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center">
+                  <img src="https://capitalsquare.vn/images/section-1-logo.png" alt="logo" />
                 </div>
               </div>
 
               <div className="relative z-10">
-                <h3 className="text-sm uppercase font-medium text-white tracking-wider mb-2">
+                <h3 className="text-xs md:text-sm uppercase font-medium text-white tracking-wider mb-2">
                   VỊ TRÍ "KIM CƯƠNG"
                 </h3>
-                <h2 className="text-2xl font-bold text-orange-500 mb-4 leading-tight">
+                <h2 className="text-xl md:text-2xl font-bold text-orange-500 mb-4 leading-tight">
                   TÂM MẠCH
                   <br />
                   CỦA ĐÀ NẴNG
                 </h2>
-                <p className="text-white text-sm leading-relaxed text-right">
+                <p className="text-white text-xs md:text-sm leading-relaxed text-left md:text-right">
                   VƯƠN MÌNH KHẲNG ĐỊNH VỊ THẾ GIỮA TRUNG TÂM THÀNH PHỐ
                   <br />
                   ĐÁNG SỐNG ĐÀ NẴNG
@@ -81,28 +78,28 @@ export default function CapitalSquarePage() {
               </div>
             </div>
 
-            <div className="relative rounded-tr-[80px] overflow-hidden h-[300px]">
+            <div className="relative rounded-bl-2xl md:rounded-bl-none rounded-br-2xl md:rounded-tr-[80px] overflow-hidden h-[250px] md:h-[300px]">
               <img
-                src="https://img.youtube.com/vi/cytDlTrgkVY/maxresdefault.jpg"
+                src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-1-1.png"
                 alt="Video Thumbnail"
-                className="absolute inset-0 w-full h-full object-cover z-0 rounded-tr-[80px]"
+                className="absolute inset-0 w-full h-full object-cover z-0 rounded-bl-2xl md:rounded-bl-none rounded-br-2xl md:rounded-tr-[80px]"
               />
 
-              <div className="absolute inset-0 bg-black bg-opacity-10 rounded-tr-[80px]" />
+              <div className="absolute inset-0 bg-black bg-opacity-10 rounded-bl-2xl md:rounded-bl-none rounded-br-2xl md:rounded-tr-[80px]" />
 
               <div className="absolute inset-0 flex items-center justify-center z-10">
                 <button
                   onClick={() => setShowModal(true)}
-                  className="w-16 h-16 flex items-center justify-center text-gray-800 hover:scale-105 transition-transform duration-200 shadow-lg bg-white rounded-full"
+                  className="w-12 h-12 md:w-16 md:h-16 flex items-center justify-center text-gray-800 hover:scale-105 transition-transform duration-200 shadow-lg bg-white rounded-full"
                 >
-                  <div className="w-0 h-0 border-l-[16px] border-l-gray-800 border-t-[10px] border-t-transparent border-b-[10px] border-b-transparent ml-1"></div>
+                  <div className="w-0 h-0 border-l-[12px] md:border-l-[16px] border-l-gray-800 border-t-[8px] md:border-t-[10px] border-t-transparent border-b-[8px] md:border-b-[10px] border-b-transparent ml-1"></div>
                 </button>
               </div>
 
-              <div className="absolute bottom-6 right-6 z-10">
+              <div className="absolute bottom-4 md:bottom-6 right-4 md:right-6 z-10">
                 <span
                   onClick={() => setShowModal(true)}
-                  className="text-white text-sm font-medium underline cursor-pointer hover:text-orange-300 transition-colors"
+                  className="text-white text-xs md:text-sm font-medium underline cursor-pointer hover:text-orange-300 transition-colors"
                 >
                   XEM VIDEO DỰ ÁN
                 </span>
@@ -111,7 +108,7 @@ export default function CapitalSquarePage() {
               {showModal && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
                   <div
-                    className="absolute inset-0   backdrop-blur-none"
+                    className="absolute inset-0 backdrop-blur-none"
                     onClick={() => setShowModal(false)}
                   />
 
@@ -229,7 +226,7 @@ export default function CapitalSquarePage() {
               backgroundSize: "100%",
               // width: "130%",
               // height: "90%",
-              // transform: "translateX(-15%)", 
+              // transform: "translateX(-15%)",
               clipPath: "inset(0 25% 0 0)",
             }}
           />

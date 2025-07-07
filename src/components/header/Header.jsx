@@ -1,58 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Khóa cuộn khi mở menu mobile
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+  }, [menuOpen]);
+
   return (
-    <header className="sticky top-0 left-0 w-full z-50">
+    <header className="relative md:sticky md:top-0 w-full z-50 bg-white">
       {/* Top bar */}
-      <div className="bg-gray-100 text-sm text-gray-800 px-4 py-2
-                      flex flex-col md:flex-row justify-between items-center">
-        <div className="flex flex-col md:flex-row md:space-x-6 items-center w-full md:w-auto">
-          <div className="flex items-center space-x-1">
-            <span className="text-orange-500">📞</span>
-            <span>0948 961 188</span>
+      <div className="w-full bg-gray-100 text-sm text-gray-800 px-4 py-2">
+        <div className="flex items-center justify-between whitespace-nowrap overflow-x-auto no-scrollbar text-xs sm:text-sm">
+          {/* Số điện thoại */}
+          <div className="flex items-center space-x-4 flex-shrink-0">
+            <div className="flex items-center space-x-1">
+              <span className="text-orange-500">📞</span>
+              <span>0948 961 188 • 0986 532 308 • 0935 585 699</span>
+            </div>
           </div>
-          <div className="flex flex-col md:flex-row md:space-x-6 mt-2 md:mt-0">
-            <div>0986 532 308</div>
-            <div>0935 585 699</div>
+
+          {/* Email */}
+          <div className="hidden sm:flex items-center space-x-1 flex-shrink-0">
+            <span className="text-orange-500">✉️</span>
+            <span>sales@capitalsquare.vn</span>
           </div>
-        </div>
-        <div className="flex items-center space-x-1 mt-2 md:mt-0">
-          <span className="text-orange-500">✉️</span>
-          <span>sales@capitalsquare.vn</span>
         </div>
       </div>
 
       {/* Main bar */}
       <div className="bg-white shadow-md">
-        <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
-          {/* Hamburger button chỉ hiển thị trên <md */}
+        <div className="max-w-7xl mx-auto px-6 py-2 md:py-3 relative flex items-center justify-between">
+          {/* Mobile Hamburger button */}
           <button
-            className="md:hidden text-blue-900 text-2xl focus:outline-none"
+            className="md:hidden text-blue-900 text-2xl z-30"
             onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
           >
-            ☰
+            {menuOpen ? "✕" : "☰"}
           </button>
-
-          {/* Nav chính – ẩn trên mobile, hiện từ md trở lên */}
+          {/* Nav trái (desktop) */}
           <nav className="hidden md:flex space-x-6 text-blue-900 font-semibold text-base uppercase">
             <a href="#introduce">Giới thiệu</a>
             <a href="#location">Vị trí</a>
             <a href="#utilities">Tiện ích</a>
             <a href="#ground">Mặt bằng</a>
           </nav>
-
-          {/* Logo luôn hiện */}
-          <a href="/" className="flex-shrink-0">
+          {/* Logo giữa */}
+          <a
+            href="/"
+            className="absolute left-1/2 transform -translate-x-1/2 flex justify-center z-10"
+          >
             <img
               src="https://capitalsquare.vn/images/logo.png"
               alt="Capital Square Logo"
-              className="h-8"
+              className="h-6 sm:h-8 md:h-10 lg:h-12 w-auto max-w-[120px] sm:max-w-[140px] "
             />
           </a>
-
-          {/* Nav phụ – ẩn trên mobile, hiện từ md trở lên */}
+          {/* Nav phải (desktop) */}
           <nav className="hidden md:flex space-x-6 text-blue-900 font-semibold text-sm uppercase">
             <a href="#library-image">Thư viện hình ảnh</a>
             <a href="#highlights">Điểm nổi bật</a>
@@ -60,64 +66,39 @@ function Header() {
           </nav>
         </div>
 
-        {/* Mobile menu – chỉ hiện khi nhấn nút */}
-        {menuOpen && (
-          <div className="md:hidden bg-white px-6 pb-4 space-y-4">
-            <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-base uppercase">
+        {/* Mobile menu (slide down) */}
+        <div
+          className={`md:hidden bg-white px-6 pt-2  space-y-4 transition-all duration-300 overflow-hidden ${
+            menuOpen
+              ? "max-h-screen opacity-100"
+              : "max-h-0 opacity-0 pointer-events-none"
+          }`}
+        >
+          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-base uppercase">
+            {["Giới thiệu", "Vị trí", "Tiện ích", "Mặt bằng"].map((text, i) => (
               <a
-                href="#introduce"
+                key={i}
+                href={`#${["introduce", "location", "utilities", "ground"][i]}`}
                 onClick={() => setMenuOpen(false)}
                 className="block w-full py-1"
               >
-                Giới thiệu
+                {text}
               </a>
+            ))}
+          </nav>
+          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-sm uppercase pt-4 border-t border-gray-200">
+            {["Thư viện hình ảnh", "Điểm nổi bật", "Liên hệ"].map((text, i) => (
               <a
-                href="#location"
+                key={i}
+                href={`#${["library-image", "highlights", "contact"][i]}`}
                 onClick={() => setMenuOpen(false)}
                 className="block w-full py-1"
               >
-                Vị trí
+                {text}
               </a>
-              <a
-                href="#utilities"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full py-1"
-              >
-                Tiện ích
-              </a>
-              <a
-                href="#ground"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full py-1"
-              >
-                Mặt bằng
-              </a>
-            </nav>
-            <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-sm uppercase pt-4 border-t border-gray-200">
-              <a
-                href="#library-image"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full py-1"
-              >
-                Thư viện hình ảnh
-              </a>
-              <a
-                href="#highlights"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full py-1"
-              >
-                Điểm nổi bật
-              </a>
-              <a
-                href="#contact"
-                onClick={() => setMenuOpen(false)}
-                className="block w-full py-1"
-              >
-                Liên hệ
-              </a>
-            </nav>
-          </div>
-        )}
+            ))}
+          </nav>
+        </div>
       </div>
     </header>
   );
