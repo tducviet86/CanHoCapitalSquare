@@ -61,37 +61,58 @@ export default function CapitalSquareCarousel() {
           "linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-6-bg.png')",
       }}
     >
-      {/* Navigation buttons */}
       <button
         onClick={scrollPrev}
-        className="absolute left-4 sm:left-10 top-1/2 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 sm:p-3 rounded-full transition"
+        className="
+    absolute left-4 sm:left-6 lg:left-10
+    top-1/2 -translate-y-1/2
+    lg:top-[75%] lg:translate-y-0
+    z-10
+    bg-black/40 hover:bg-black/60
+    p-2 sm:p-3 lg:p-4
+    rounded-full transition text-white
+  "
       >
-        <ChevronLeft fontSize="large" />
-      </button>
-      <button
-        onClick={scrollNext}
-        className="absolute right-4 sm:right-10 top-1/2 z-10 -translate-y-1/2 bg-black/40 hover:bg-black/60 p-2 sm:p-3 rounded-full transition"
-      >
-        <ChevronRight fontSize="large" />
+        <ChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
       </button>
 
-      {/* Carousel */}
+      <button
+        onClick={scrollNext}
+        className="
+    absolute right-4 sm:right-6 lg:right-10
+    top-1/2 -translate-y-1/2
+    lg:top-[75%] lg:translate-y-0
+    z-10
+    bg-black/40 hover:bg-black/60
+    p-2 sm:p-3 lg:p-4
+    rounded-full transition text-white
+  "
+      >
+        <ChevronRight className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />
+      </button>
+      {/* Carousel container */}
       <div
-        className="overflow-hidden w-full max-w-7xl mx-auto px-4 sm:px-6"
+        className="overflow-hidden lg:mt-100 lg-mb-10 w-full max-w-7xl mx-auto px-4 sm:px-6"
         ref={emblaRef}
       >
         <div className="flex gap-4 sm:gap-6">
           {slides.map((item) => (
             <div
               key={item.id}
-              className="relative flex-shrink-0 basis-[85%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-xl overflow-hidden group"
+              className="
+                relative flex-shrink-0
+                basis-full         // mobile: 1 slide
+                sm:basis-1/2       // tablet: 2 slides
+                lg:basis-1/4       // desktop: 4 slides
+                rounded-xl overflow-hidden group transition-all duration-300
+              "
             >
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-64 md:h-72 object-cover rounded-lg transition-transform duration-300 group-hover:scale-105"
+                className="w-full h-full sm:h-64 md:h-72 object-cover rounded-xl transition-transform duration-300 "
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-black/60 p-3 text-sm sm:text-base font-medium text-center">
+              <div className="absolute bottom-0 left-0 right-0  px-2 py-3 text-sm sm:text-base font-medium text-center">
                 {item.title}
               </div>
             </div>

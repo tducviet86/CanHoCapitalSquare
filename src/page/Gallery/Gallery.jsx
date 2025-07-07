@@ -23,7 +23,7 @@ export default function Gallery() {
   const fallbackThumbnail = "/fallback-thumbnail.jpg";
 
   return (
-    <div id="library-image" className="min-h-screen bg-white p-4 sm:p-6 md:p-8">
+    <div id="library-image" className="bg-white p-4 sm:p-6 md:p-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 sm:mb-8 gap-4">
@@ -72,7 +72,7 @@ export default function Gallery() {
               pagination={{ clickable: true }}
               autoplay={{ delay: 3000 }}
               loop
-              className="h-[300px] sm:h-[400px] md:h-[500px]"
+              className="aspect-video md:aspect-auto md:h-[500px] rounded-lg"
             >
               {images.map((img, index) => (
                 <SwiperSlide key={index}>
@@ -89,7 +89,7 @@ export default function Gallery() {
 
         {/* Video Preview */}
         {activeTab === "video" && (
-          <div className="relative bg-white rounded-lg overflow-hidden shadow-lg h-[300px] sm:h-[400px] md:h-[500px] flex justify-center items-center">
+          <div className="relative bg-white rounded-lg overflow-hidden shadow-lg aspect-video md:aspect-auto md:h-[500px] flex justify-center items-center">
             {videoPlaying ? (
               <iframe
                 src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1`}
