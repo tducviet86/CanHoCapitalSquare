@@ -288,7 +288,7 @@ export default function CapitalSquarePage() {
 
         <div id="location" className="w-full flex justify-end">
           <section className="relative lg:-mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-full lg:w-[85%] z-20 lg:rounded-tr-[20%]">
-            <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-full">
+            <div className="h-[300px] sm:h-[400px] md:h-[350px] lg:h-full">
               <img
                 src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-3.png"
                 alt="Bản đồ minh đường tụ thủy"
@@ -389,7 +389,7 @@ export default function CapitalSquarePage() {
             <div className="absolute left-8 top-1/2 -translate-y-1/2 w-0.5 h-32 bg-gradient-to-b from-orange-400 via-orange-500 to-orange-600"></div>
 
             {/* Text content */}
-            <div className="absolute  left-15 sm:left-[70px] lg:left-[70px] md:left-[40px]  top-1/2 -translate-y-1/2 text-white z-10 px-4 sm:px-6">
+            <div className="absolute left-15 sm:left-[70px] lg:left-[70px] md:left-[40px] top-1/2 -translate-y-1/2 text-white z-10 md:z-30 px-4 sm:px-6">
               <h2 className="text-4xl sm:text-[56px] font-bold mb-4 tracking-wider">
                 TIỆN ÍCH
               </h2>
@@ -464,21 +464,26 @@ export default function CapitalSquarePage() {
           </div>
 
           <div className="w-full mt-5 lg:mt-0 lg:flex lg:justify-center">
-            <div className="px-4 md:p-6 bg-[#2B5192] lg:pt-12 lg:pr-40 lg:pl-[80px] flex flex-col justify-center md:rounded-tr-[20%] text-right items-end">
-              <h2 className="text-[#fff] text-[28px] md:text-[56px] uppercase mb-4 font-['Roboto-Light'] leading-snug md:leading-normal">
+            <div className="px-4 md:px-6 md:pr-4 bg-[#2B5192] lg:pt-12 lg:pr-40 lg:pl-[80px] flex flex-col justify-center md:rounded-tr-[20%] text-right items-end">
+              <h2 className="text-[#fff] text-[28px] md:text-[44px] lg:text-[56px] uppercase mb-4 font-['Roboto-Light'] leading-snug md:leading-snug lg:leading-normal">
                 BIỂU TƯỢNG <br />
-                KIẾN TRÚC
-                <br />
+                KIẾN TRÚC <br />
                 ĐỘC BẢN
               </h2>
 
-              <p className="text-sm md:text-[19.2px] md:text-xl font-bold font-['Roboto'] leading-relaxed mb-6 text-[#fff] max-w-sm md:max-w-md text-right">
+              <p className="text-sm md:text-base lg:text-xl font-bold font-['Roboto'] leading-relaxed mb-6 text-[#fff] max-w-sm md:max-w-lg text-right">
                 Capital Square như những cánh buồm căng gió vươn mình trên dòng
                 sông Hàn, hòa quyện giữa nét cong mềm mại của dòng nước và ánh
                 nắng rực rỡ trên mặt kính sống động.
               </p>
 
-              <div className="text-[#F47920] text-[26px] md:text-[50px] font-bold leading-snug uppercase tracking-wide space-y-1 text-right">
+              <p className="text-sm md:text-base lg:text-xl font-bold font-['Roboto'] leading-relaxed mb-6 text-[#fff] max-w-sm md:max-w-md text-right">
+                Capital Square như những cánh buồm căng gió vươn mình trên dòng
+                sông Hàn, hòa quyện giữa nét cong mềm mại của dòng nước và ánh
+                nắng rực rỡ trên mặt kính sống động.
+              </p>
+
+              <div className="text-[#F47920] text-[20px] md:text-[32px] lg:text-[50px] font-bold leading-snug uppercase tracking-wide space-y-1 text-right">
                 THÔNG SỐ <br />
                 CÁC CĂN <br />
                 & MẶT BẰNG <br />
@@ -499,7 +504,7 @@ export default function CapitalSquarePage() {
       <Gallery />
       <CapitalSquareCarousel />
       <RegisterForm />
-      <FloatingContactWidget/>
+      <FloatingContactWidget />
     </main>
   );
 }
