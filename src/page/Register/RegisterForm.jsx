@@ -52,11 +52,11 @@ export default function RegisterForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
-  
+
     setSubmitting(true);
     const formAction =
       "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeo3SyNxL2JcoKYnVtdOajIfLfbFszW2C0YJRg5F1rW5Nk7rg/formResponse";
-  
+
     const formData = new FormData();
     formData.append("entry.1730460443", form.name);
     formData.append("entry.255004664", form.phone);
@@ -64,7 +64,7 @@ export default function RegisterForm() {
     form.options.forEach((option) =>
       formData.append("entry.880524670", option)
     );
-  
+
     try {
       await fetch(formAction, {
         method: "POST",
@@ -78,11 +78,15 @@ export default function RegisterForm() {
       });
       setForm({ name: "", phone: "", email: "", options: [] });
     } catch (error) {
-      toast.error("❌ Có lỗi xảy ra. Vui lòng thử lại.", {
-        position: "top-center",
-        autoClose: 3000,
-        theme: "colored",
-      },error);
+      toast.error(
+        "❌ Có lỗi xảy ra. Vui lòng thử lại.",
+        {
+          position: "top-center",
+          autoClose: 3000,
+          theme: "colored",
+        },
+        error
+      );
     } finally {
       setSubmitting(false);
     }
@@ -147,19 +151,30 @@ export default function RegisterForm() {
               </label>
             ))}
           </div>
-
-          {/* Nút gửi */}
-          <div className="mt-8 text-right">
-            <button
-              type="submit"
-              disabled={submitting}
-              className={`inline-flex items-center gap-2 px-6 py-2 border border-orange-500 text-orange-500 rounded-full text-sm hover:bg-orange-50 transition ${
-                submitting ? "opacity-50 cursor-not-allowed" : ""
-              }`}
-            >
-              {submitting ? "Đang gửi..." : "Đăng ký"}
-              <ArrowRightAlt />
-            </button>
+          <div className="flex justify-between">
+            <div className="mt-8">
+              <a
+                href="tel:01234567891"
+                className="inline-flex items-center gap-1 sm:gap-2 px-4 py-2 sm:px-6 border border-orange-500 text-orange-500 rounded-full text-xs sm:text-sm hover:bg-orange-50 transition"
+              >
+                <span className="truncate max-w-[150px] text-orange-500  sm:max-w-none">
+                Hotline: (+84)123 456 7891
+                </span>
+              </a>
+            </div>
+            {/* Nút gửi */}
+            <div className="mt-8 text-right">
+              <button
+                type="submit"
+                disabled={submitting}
+                className={`inline-flex items-center gap-2 px-6 py-2 border border-orange-500 text-orange-500 rounded-full text-sm hover:bg-orange-50 transition ${
+                  submitting ? "opacity-50 cursor-not-allowed" : ""
+                }`}
+              >
+                {submitting ? "Đang gửi..." : "Đăng ký"}
+                <ArrowRightAlt />
+              </button>
+            </div>
           </div>
         </form>
       </div>

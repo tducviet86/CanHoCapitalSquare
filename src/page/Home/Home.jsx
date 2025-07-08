@@ -8,6 +8,7 @@ import { useState } from "react";
 import Gallery from "../Gallery/Gallery";
 import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
+import FloatingContactWidget from "../../components/Floating/floatting-icon";
 
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
@@ -34,7 +35,7 @@ export default function CapitalSquarePage() {
         </div>
       </section>
 
-      <section className="bottom-30 sm:bottom-10 md:bottom-10 relative overflow-hidden pt-8 pb-2">
+      <section className="bottom-30 sm:bottom-10 md:bottom-35 relative overflow-hidden pt-8 pb-2">
         <div className="w-[95%] md:w-[85%] lg:w-[77%] mx-auto">
           <div
             className="grid grid-cols-1 md:grid-cols-2 h-auto md:h-[300px] overflow-hidden shadow-lg"
@@ -287,7 +288,6 @@ export default function CapitalSquarePage() {
 
         <div id="location" className="w-full flex justify-end">
           <section className="relative lg:-mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-full lg:w-[85%] z-20 lg:rounded-tr-[20%]">
-            {/* Hình ảnh: full trên mobile, chia 2 cột ở desktop */}
             <div className="h-[300px] sm:h-[400px] md:h-[500px] lg:h-full">
               <img
                 src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-3.png"
@@ -410,11 +410,9 @@ export default function CapitalSquarePage() {
             </div>
           </div>
 
-          {/* RIGHT: Gray background (hide on mobile/tablet) */}
           <div className="hidden md:block w-full md:w-[44%] h-[1000px] bg-[#e8e8e8]"></div>
         </div>
 
-        {/* Desktop version */}
         <div className="hidden md:block w-full h-[400px] md:w-[800px] md:h-[650px] mt-8 md:mt-20 md:absolute md:left-[70%] md:top-95 md:-translate-x-1/2 md:-translate-y-1/2 z-20">
           <img
             src="https://capitalsquare.vn/images/section-3-1-slider-1.png"
@@ -501,7 +499,7 @@ export default function CapitalSquarePage() {
       <Gallery />
       <CapitalSquareCarousel />
       <RegisterForm />
-      {/* <FloatingContactWidget /> */}
+      <FloatingContactWidget/>
     </main>
   );
 }
