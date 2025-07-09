@@ -4,15 +4,15 @@ function Footer() {
         {/* Main section */}
         <div className="max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 border-t border-orange-500">
           {/* Logo + Address */}
-          <div className="space-y-4">
+          <div className="space-y-3">
             <img
-              src="/logo.png" // Thay logo chính xác tại đây
+              src="../../../public/images/logo.png" // Thay logo chính xác tại đây
               alt="Capital Square"
               className="h-6"
             />
             <div className="flex items-start gap-2">
               <span>📍</span>
-              <p>Phường An Hải, Thành phố Đà Nẵng</p>
+              <p>A102 Tòa nhà MONARCHY A ĐÀ NẴNG, 535 Trần Hưng Đạo, quận Sơn Trà, TP. Đà Nẵng.</p>
             </div>
             <div className="flex items-start gap-2">
               <span>✉️</span>
@@ -40,7 +40,7 @@ function Footer() {
             <div>
               <span className="text-gray-400">Contractor:</span>
               <img
-                src="/coteccons.png" // Thay logo Coteccons tại đây
+                src="../../../public/images/dv.png" // Thay logo Coteccons tại đây
                 alt="Coteccons"
                 className="h-6 mt-1"
               />
@@ -49,7 +49,7 @@ function Footer() {
               <span className="text-gray-400">Developer</span>
               <div className="mt-1">
                 <img
-                  src="/logo.png"
+                  src="../../../public/images/logo.png"
                   alt="Capital Square"
                   className="h-6"
                 />

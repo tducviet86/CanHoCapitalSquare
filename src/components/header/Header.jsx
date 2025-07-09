@@ -11,11 +11,11 @@ function Header() {
     <header className="relative lg:sticky lg:top-0 w-full z-50 bg-white">
       {/* Top bar */}
       <div className="w-full bg-gray-100 text-sm text-gray-800 px-4 py-2">
-        <div className="flex items-center justify-between whitespace-nowrap overflow-x-auto no-scrollbar text-xs sm:text-sm">
+        <div className="flex items-center justify-between whitespace-  overflow-x-auto no-scrollbar text-xs sm:text-sm">
           <div className="flex items-center space-x-4 flex-shrink-0">
             <div className="flex items-center space-x-1">
               <span className="text-orange-500">📞</span>
-              <span>0948 961 188 • 0986 532 308 • 0935 585 699</span>
+              <span>0911 296 979 •  0904 643 643</span>
             </div>
           </div>
           <div className="hidden sm:flex items-center space-x-1 flex-shrink-0">

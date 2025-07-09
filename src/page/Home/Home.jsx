@@ -4,7 +4,7 @@ import "swiper/css/pagination";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Gallery from "../Gallery/Gallery";
 import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
@@ -12,6 +12,17 @@ import FloatingContactWidget from "../../components/Floating/floatting-icon";
 
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://chat.taggoai.com/v2.js";
+    script.async = true;
+    script.setAttribute("data-taggo-botid", "686dc4ae5ac0038427e24d49");
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
   return (
     <main className="min-h-screen bg-white">
       <section className="relative h-[600px] md:h-screen">
@@ -504,7 +515,7 @@ export default function CapitalSquarePage() {
       <Gallery />
       <CapitalSquareCarousel />
       <RegisterForm />
-      <FloatingContactWidget />
+      {/* <FloatingContactWidget /> */}
     </main>
   );
 }

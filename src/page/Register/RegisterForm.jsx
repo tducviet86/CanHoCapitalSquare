@@ -154,11 +154,11 @@ export default function RegisterForm() {
           <div className="flex justify-between">
             <div className="mt-8">
               <a
-                href="tel:01234567891"
+                href="tel:0911296979 "
                 className="inline-flex items-center gap-1 sm:gap-2 px-4 py-2 sm:px-6 border border-orange-500 text-orange-500 rounded-full text-xs sm:text-sm hover:bg-orange-50 transition"
               >
                 <span className="truncate max-w-[150px] text-orange-500  sm:max-w-none">
-                Hotline: (+84)123 456 7891
+                Hotline: (+84)91 129 6979
                 </span>
               </a>
             </div>
