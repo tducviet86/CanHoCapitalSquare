@@ -61,7 +61,7 @@ function Header() {
             </a>
             <a href="/">
               <img
-                src="/images/dv.png"
+                src="../../../src/assets/images/dv.png"
                 alt="DV Icon"
                 className="h-8 sm:h-10 md:h-12 lg:h-12 w-auto max-w-[60px] sm:max-w-[70px]"
               />

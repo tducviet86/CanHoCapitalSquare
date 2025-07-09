@@ -6,7 +6,7 @@ function Footer() {
         {/* Logo + Address */}
         <div className="space-y-3">
           <img
-            src="../../../public/images/logo.png" 
+            src="../../../src/assets/images/logo.png" 
             alt="Capital Square"
             className="h-6"
           />
@@ -60,7 +60,7 @@ function Footer() {
           <div>
             <span className="text-gray-400">Contractor:</span>
             <img
-              src="../../../public/images/dv.png" // Thay logo Coteccons tại đây
+              src="../../../src/assets/images/dv.png" 
               alt="Coteccons"
               className="h-6 mt-1"
             />
@@ -69,7 +69,7 @@ function Footer() {
             <span className="text-gray-400">Developer</span>
             <div className="mt-1">
               <img
-                src="../../../public/images/logo.png"
+                src="../../../src/assets/images/logo.png"
                 alt="Capital Square"
                 className="h-6"
               />
