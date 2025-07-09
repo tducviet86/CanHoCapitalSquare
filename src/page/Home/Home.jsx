@@ -8,7 +8,6 @@ import { useState, useEffect } from "react";
 import Gallery from "../Gallery/Gallery";
 import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
-import FloatingContactWidget from "../../components/Floating/floatting-icon";
 
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
@@ -515,7 +514,6 @@ export default function CapitalSquarePage() {
       <Gallery />
       <CapitalSquareCarousel />
       <RegisterForm />
-      {/* <FloatingContactWidget /> */}
     </main>
   );
 }
