@@ -1,3 +1,7 @@
+import dvIcon from "../../../src/assets/images/dv.png";
+import logoIcon from "../../../src/assets/images/logo.png";
+
+
 function Footer() {
   return (
     <footer className="bg-[#002E6D] text-white text-sm relative">
@@ -6,7 +10,7 @@ function Footer() {
         {/* Logo + Address */}
         <div className="space-y-3">
           <img
-            src="../../../src/assets/images/logo.png" 
+            src={logoIcon}
             alt="Capital Square"
             className="h-6"
           />
@@ -60,7 +64,7 @@ function Footer() {
           <div>
             <span className="text-gray-400">Contractor:</span>
             <img
-              src="../../../src/assets/images/dv.png" 
+              src={dvIcon} 
               alt="Coteccons"
               className="h-6 mt-1"
             />
@@ -69,7 +73,7 @@ function Footer() {
             <span className="text-gray-400">Developer</span>
             <div className="mt-1">
               <img
-                src="../../../src/assets/images/logo.png"
+                src={logoIcon}
                 alt="Capital Square"
                 className="h-6"
               />

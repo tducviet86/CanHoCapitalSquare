@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
+import dvIcon from "../../../src/assets/images/dv.png";
+import logoIcon from "../../../src/assets/images/logo.png";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -54,14 +56,14 @@ function Header() {
           <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-4 z-10">
             <a href="/">
               <img
-                src="https://capitalsquare.vn/images/logo.png"
+                src={logoIcon}
                 alt="Capital Square Logo"
                 className="h-6 sm:h-10 md:h-12 lg:h-8 w-auto max-w-[150px] sm:max-w-[180px]"
               />
             </a>
             <a href="/">
               <img
-                src="../../../src/assets/images/dv.png"
+                src={dvIcon}
                 alt="DV Icon"
                 className="h-8 sm:h-10 md:h-12 lg:h-12 w-auto max-w-[60px] sm:max-w-[70px]"
               />
