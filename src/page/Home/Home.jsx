@@ -8,7 +8,7 @@ import { useState, useEffect } from "react";
 import Gallery from "../Gallery/Gallery";
 import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
-
+import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
   useEffect(() => {
@@ -35,10 +35,10 @@ export default function CapitalSquarePage() {
         </div>
         <div className="absolute top-[5%] left-[5%] md:left-[10%] lg:left-[20%] z-10 text-white px-4 md:px-0">
           <div>
-            <h1 className="text-[24px] md:text-[40px] lg:text-[64px] font-extrabold ml-0 md:ml-[-2%] lg:ml-[-3%] text-[#F47920] font-['Roboto-SemiBold'] leading-tight">
+            <h1 className="text-[36px] md:text-[40px] lg:text-[64px] font-extrabold ml-0 md:ml-[-2%] lg:ml-[-3%] text-[#F47920] font-['Roboto-SemiBold'] leading-tight">
               CAPITAL SQUARE
             </h1>
-            <p className="text-[24px] md:text-[40px] lg:text-[64px] mt-[10px] leading-[1.1] ml-0 md:ml-[100px] lg:ml-[220px]">
+            <p className="text-[36px] md:text-[40px] lg:text-[64px] mt-[10px] leading-[1.1] ml-0 md:ml-[100px] lg:ml-[220px]">
               Vị thế Phồn vinh
             </p>
           </div>
@@ -514,6 +514,15 @@ export default function CapitalSquarePage() {
       <Gallery />
       <CapitalSquareCarousel />
       <RegisterForm />
+      <a
+        href="tel:0911296979"
+        className="fixed bottom-40 right-2 z-50 flex items-center px-4 py-2 gap-2 animate-soft-shake transition-all"
+      >
+        <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-orange-400 text-orange-500 animate-pulse-ring">
+          <LocalPhoneIcon />
+        </div>
+        <span className="text-orange-500 font-bold text-xl">0911 296 979</span>
+      </a>
     </main>
   );
 }

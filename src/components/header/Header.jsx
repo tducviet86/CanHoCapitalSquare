@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,21 +15,17 @@ function Header() {
         <div className="flex items-center justify-between whitespace-  overflow-x-auto no-scrollbar text-xs sm:text-sm">
           <div className="flex items-center space-x-4 flex-shrink-0">
             <div className="flex items-center space-x-1">
-              <span className="text-orange-500">📞</span>
-              <span>0911 296 979 •  0904 643 643</span>
+              <span className="text-orange-500 text-base sm:text-lg md:text-base lg:text-base"> <LocalPhoneIcon/> 0911 296 979 </span>
             </div>
           </div>
           <div className="hidden sm:flex items-center space-x-1 flex-shrink-0">
-            <span className="text-orange-500">✉️</span>
-            <span>sales@capitalsquare.vn</span>
+            <span className="text-orange-500 text-base ">✉️ canhocapitalsquare102@gmail.com</span>
           </div>
         </div>
       </div>
 
-      {/* Main Header */}
       <div className="bg-white shadow-md">
         <div className="max-w-7xl mx-auto px-6 py-2 lg:py-3 relative flex items-center justify-between">
-          {/* Mobile/Tablet Menu Toggle */}
           <button
             className="lg:hidden text-blue-900 text-2xl z-30"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -53,17 +50,23 @@ function Header() {
             </a>
           </nav>
 
-          {/* Center logo */}
-          <a
-            href="/"
-            className="absolute left-1/2 transform -translate-x-1/2 flex justify-center z-10"
-          >
-            <img
-              src="https://capitalsquare.vn/images/logo.png"
-              alt="Capital Square Logo"
-              className="h-6 sm:h-8 md:h-10 lg:h-10 w-auto max-w-[130px] sm:max-w-[150px]"
-            />
-          </a>
+          
+          <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center space-x-4 z-10">
+            <a href="/">
+              <img
+                src="https://capitalsquare.vn/images/logo.png"
+                alt="Capital Square Logo"
+                className="h-6 sm:h-10 md:h-12 lg:h-8 w-auto max-w-[150px] sm:max-w-[180px]"
+              />
+            </a>
+            <a href="/">
+              <img
+                src="/images/dv.png"
+                alt="DV Icon"
+                className="h-8 sm:h-10 md:h-12 lg:h-12 w-auto max-w-[60px] sm:max-w-[70px]"
+              />
+            </a>
+          </div>
 
           {/* Right nav for Desktop only */}
           <nav className="hidden lg:flex space-x-6 text-blue-900 font-semibold text-sm uppercase font-['Roboto']">
@@ -87,7 +90,7 @@ function Header() {
               : "max-h-0 opacity-0 pointer-events-none"
           }`}
         >
-          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-base uppercase">
+          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-base uppercase font-['Roboto'">
             {["Giới thiệu", "Vị trí", "Tiện ích", "Mặt bằng"].map((text, i) => (
               <a
                 key={i}
@@ -99,7 +102,7 @@ function Header() {
               </a>
             ))}
           </nav>
-          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-sm uppercase pt-4 border-t border-gray-200">
+          <nav className="flex flex-col space-y-2 text-blue-900 font-semibold text-base uppercase pt-4 border-t border-gray-200 font-['Roboto'">
             {["Thư viện hình ảnh", "Điểm nổi bật", "Liên hệ"].map((text, i) => (
               <a
                 key={i}

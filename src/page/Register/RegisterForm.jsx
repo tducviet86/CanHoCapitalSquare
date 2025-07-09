@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRightAlt } from "@mui/icons-material";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,6 +15,8 @@ export default function RegisterForm() {
 
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const checkboxOptions = [
     "Penthouse",
@@ -24,6 +26,14 @@ export default function RegisterForm() {
     "Căn hộ 3PN",
     "Nhu cầu khác",
   ];
+
+  // Detect mobile/tablet
+  useEffect(() => {
+    const checkIsMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -55,14 +65,14 @@ export default function RegisterForm() {
 
     setSubmitting(true);
     const formAction =
-      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeo3SyNxL2JcoKYnVtdOajIfLfbFszW2C0YJRg5F1rW5Nk7rg/formResponse";
+      "https://docs.google.com/forms/u/0/d/e/1FAIpQLSf_JIH0okbwkpqHH14bSXv6SUPXPBKBKRBTlmIpL2qBvmi_4A/formResponse";
 
     const formData = new FormData();
-    formData.append("entry.1730460443", form.name);
-    formData.append("entry.255004664", form.phone);
-    formData.append("entry.764417699", form.email);
+    formData.append("entry.1082978465", form.name);
+    formData.append("entry.1415555996", form.phone);
+    formData.append("entry.2139884960", form.email);
     form.options.forEach((option) =>
-      formData.append("entry.880524670", option)
+      formData.append("entry.1424342332", option)
     );
 
     try {
@@ -71,36 +81,37 @@ export default function RegisterForm() {
         mode: "no-cors",
         body: formData,
       });
-      toast.success("🎉 Gửi thông tin thành công!", {
+
+      if (isMobile) {
+        setShowModal(true);
+      } else {
+        toast.success("🎉 Gửi thông tin thành công!", {
+          position: "top-right", // ✅ dùng chuỗi
+          autoClose: 3000,
+          theme: "colored",
+        });
+      }
+
+      setForm({ name: "", phone: "", email: "", options: [] });
+    } catch (error) {
+      toast.error("❌ Có lỗi xảy ra. Vui lòng thử lại.", {
         position: "top-center",
         autoClose: 3000,
         theme: "colored",
-      });
-      setForm({ name: "", phone: "", email: "", options: [] });
-    } catch (error) {
-      toast.error(
-        "❌ Có lỗi xảy ra. Vui lòng thử lại.",
-        {
-          position: "top-center",
-          autoClose: 3000,
-          theme: "colored",
-        },
-        error
-      );
+      },error);
     } finally {
       setSubmitting(false);
     }
   };
 
   return (
-    <section id="contact" className="bg-gray-100 py-16 px-4">
+    <section id="contact" className="bg-gray-100 py-16 px-4 relative">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold text-center text-blue-900 uppercase mb-10">
           Để lại thông tin tư vấn
         </h2>
 
         <form className="grid gap-6" onSubmit={handleSubmit}>
-          {/* Nhập liệu */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {["name", "phone", "email"].map((field) => (
               <div key={field}>
@@ -151,18 +162,19 @@ export default function RegisterForm() {
               </label>
             ))}
           </div>
+
+          {/* Hotline & Submit */}
           <div className="flex justify-between">
             <div className="mt-8">
               <a
-                href="tel:0911296979 "
+                href="tel:0911296979"
                 className="inline-flex items-center gap-1 sm:gap-2 px-4 py-2 sm:px-6 border border-orange-500 text-orange-500 rounded-full text-xs sm:text-sm hover:bg-orange-50 transition"
               >
                 <span className="truncate max-w-[150px] text-orange-500  sm:max-w-none">
-                Hotline: (+84)91 129 6979
+                  Hotline: (+84)911 296 979
                 </span>
               </a>
             </div>
-            {/* Nút gửi */}
             <div className="mt-8 text-right">
               <button
                 type="submit"
@@ -178,7 +190,35 @@ export default function RegisterForm() {
           </div>
         </form>
       </div>
-      <ToastContainer />
+
+      {/* Toast for desktop */}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        theme="colored"
+        className="!z-[9999] !top-4 !right-4"
+      />
+
+      {/* Modal for mobile/tablet */}
+      {showModal && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center px-4">
+          <div className="bg-white rounded-lg shadow-lg p-6 max-w-sm w-full text-center">
+            <h3 className="text-xl font-bold text-green-600 mb-2">
+              🎉 Gửi thành công!
+            </h3>
+            <p className="text-sm text-gray-700">
+              Cảm ơn bạn đã đăng ký. Chúng tôi sẽ liên hệ trong thời gian sớm
+              nhất.
+            </p>
+            <button
+              onClick={() => setShowModal(false)}
+              className="mt-4 px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition"
+            >
+              Đóng
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
