@@ -18,8 +18,14 @@ import image6 from "../../assets/images/z6802729079035_871f8075ea495cbd8e475224f
 import image7 from "../../assets/images/z6802729079185_837bd07524ca4ad2f10926cca1b9627a.jpg";
 import image8 from "../../assets/images/z6802729079186_0a0b2f32791559c50d0d970edbe5aecf.jpg";
 import image9 from "../../assets/images/z6802729079189_9e27448f1f8237b3b8383acf6a0581e2.jpg";
+import image10 from "../../assets/images/z6802729079190_924670671425c5ab1700c1e6b9659578.jpg";
 import imageC4 from "../../assets/images/c4.png";
 import imageC6 from "../../assets/images/c6.png";
+import backgroundFull from "../../assets/images/background-section-1.png";
+import section1 from "../../assets/images/section-1-1.png";
+import section2 from "../../assets/images/section-2-2.png";
+import section3 from "../../assets/images/section-2-3.png";
+import section4 from "../../assets/images/section-3-1.png";
 
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
@@ -41,7 +47,7 @@ export default function CapitalSquarePage() {
       <section className="relative h-[600px] md:h-screen">
         <div className="absolute inset-0">
           <img
-            src="https://capitalsquare.vn/images/section-1.png"
+            src={backgroundFull}
             alt="Capital Square Building"
             fill
             className="w-full h-full object-cover"
@@ -70,7 +76,7 @@ export default function CapitalSquarePage() {
             <div
               className="text-white relative flex flex-col justify-center px-4 md:px-8 py-8 md:py-0 rounded-tl-2xl rounded-tr-2xl md:rounded-tr-none rounded-bl-xl md:rounded-bl-xl min-h-[250px] md:min-h-0"
               style={{
-                backgroundImage: `url("https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-1-1.png")`,
+                backgroundImage: `url(${section1})`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
@@ -318,8 +324,7 @@ export default function CapitalSquarePage() {
           <div
             className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-300 ease-in-out"
             style={{
-              backgroundImage:
-                "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-2.png')",
+              backgroundImage: `url(${section2})`,
               backgroundPosition: "center 33%",
             }}
           />
@@ -329,7 +334,7 @@ export default function CapitalSquarePage() {
           <section className="relative lg:-mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-full lg:w-[85%] z-20 lg:rounded-tr-[20%]">
             <div className="h-[300px] sm:h-[400px] md:h-[350px] lg:h-full">
               <img
-                src="https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-3.png"
+                src={section3}
                 alt="Bản đồ minh đường tụ thủy"
                 className="object-cover w-full h-full"
               />
@@ -418,8 +423,7 @@ export default function CapitalSquarePage() {
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage:
-                  "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-3-1.png')",
+                backgroundImage: `url(${section4})`,
               }}
             />
 
@@ -509,15 +513,15 @@ export default function CapitalSquarePage() {
 
       <div id="ground" className="w-full flex justify-end">
         <section className="relative md:-mt-[200px] grid grid-cols-1 lg:grid-cols-2 gap-0 items-stretch w-full md:w-[85%] z-20 md:rounded-tr-[20%]">
-          <div className="block md:hidden w-full h-[400px] mt-8 mb-2  mx-auto relative z-30 shadow-lg">
+          <div className="block md:hidden w-full h-[350px] mt-4 mb-2  mx-auto relative z-30 shadow-lg">
             <img
-              src="https://capitalsquare.vn/images/section-3-1-slider-1.png"
+              src={image10}
               alt="Luxury yacht at marina"
-              className="object-cover rounded-tr-[20%] w-[98%] h-full"
+              className="object-cover rounded-tr-[10%] w-[98%] h-full"
             />
           </div>
-          <div className=" h-[400px] lg:h-[800px] md:h-[600px] sm:h-[400px] ">
-            <div className=" h-[400px] lg:h-[600px] md:h-[600px] sm:h-[400px] ">
+          <div className="h-[400px] md:h-[500px] lg:h-[1000px] my-1">
+            <div className="h-full ">
               <Swiper
                 modules={[Navigation, Pagination, Autoplay]}
                 navigation
@@ -530,7 +534,7 @@ export default function CapitalSquarePage() {
                   <img
                     src={imageC4}
                     alt="Sơ đồ C4 Capital Square"
-                    className="object-cover w-full h-full  md:rounded-tl-[20%] "
+                    className="object-cover w-full h-full md:rounded-tl-[20%]"
                   />
                 </SwiperSlide>
                 <SwiperSlide>
@@ -595,7 +599,7 @@ export default function CapitalSquarePage() {
                       className="absolute top-3 right-3 z-10 p-2 bg-white border-2 border-red-500 pointer- text-red-500 rounded-full cursor-pointer"
                       title="Đóng"
                     >
-                    <CloseIcon/>
+                      <CloseIcon />
                     </button>
 
                     {/* Image content */}
