@@ -10,6 +10,7 @@ import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
 import CloseIcon from "@mui/icons-material/Close";
+import { SiTiktok } from "react-icons/si";
 import image4 from "../../assets/images/z6802729042235_f1be76cded97e3c952c57944c3a8118b.jpg";
 
 import image5 from "../../assets/images/z6802729079034_26818e5f45451ad47d3d6f4c23423709.jpg";
@@ -283,13 +284,13 @@ export default function CapitalSquarePage() {
           <div className="relative h-full flex flex-col items-center justify-center px-4 py-8 sm:py-12 z-30">
             <div className="container mx-auto w-full">
               <div className="flex justify-center lg:justify-start">
-                <div className="bg-[#F47920] text-white p-6 sm:p-10 rounded-[40px] lg:rounded-tr-[20%] shadow-2xl w-full sm:w-[80%] md:w-[70%] lg:max-w-[400px]">
-                  <h2 className="text-[#2B5192] text-3xl sm:text-4xl font-bold mb-6 uppercase leading-tight tracking-wide font-['Roboto-SemiBold']">
+                <div className="bg-[#F47920] text-white lg:ml-60 lg:mb-10 p-6 sm:p-10 rounded-[40px] lg:rounded-tr-[20%] shadow-2xl w-full sm:w-[80%] md:w-[70%] lg:max-w-[450px]">
+                  <h2 className="text-[#2B5192] text-4xl sm:text-5xl font-bold mb-6 uppercase leading-tight tracking-wide font-['Roboto-SemiBold']">
                     VỊ THẾ
                     <br />
                     PHỒN VINH
                   </h2>
-                  <p className="text-white leading-relaxed text-sm sm:text-base lg:text-lg font-light">
+                  <p className="text-white leading-relaxed text-base sm:text-lg lg:text-xl font-light font-['Roboto-SemiBold']">
                     Dòng sông Hàn từ lâu đã là nơi không chỉ neo thuyền mà còn
                     neo gửi ký ức của cả một thành phố. Dòng sông ấy nay tiếp
                     tục là mạch nối giữa truyền thống và hiện đại, giữa cộng
@@ -302,14 +303,14 @@ export default function CapitalSquarePage() {
             </div>
 
             {/* Chữ phụ - luôn hiển thị, style khác nhau theo breakpoint */}
-            <div className="mt-8 px-4 w-full">
-              <p className="text-white uppercase text-base sm:text-xl lg:text-xl font-extrabold  lg:text-left lg:absolute lg:bottom-60 lg:pl-[35%] lg:max-w-[800px] leading-relaxed">
+            {/* <div className=" mt-8 px-4 w-full">
+              <p className="hidden lg:block text-white uppercase text-base  sm:text-xl lg:text-xl font-extrabold  lg:text-left lg:absolute lg:bottom-60 lg:pl-[35%] lg:max-w-[800px] leading-relaxed">
                 Capital Square
                 <br />
                 Là mạch nối quá khứ - hiện tại và tương lai, giữa thiên nhiên
                 con người và công nghệ.
               </p>
-            </div>
+            </div> */}
           </div>
         </div>
 
@@ -516,31 +517,31 @@ export default function CapitalSquarePage() {
             />
           </div>
           <div className=" h-[400px] lg:h-[800px] md:h-[600px] sm:h-[400px] ">
-          <div className=" h-[400px] lg:h-[600px] md:h-[600px] sm:h-[400px] ">
-            <Swiper
-              modules={[Navigation, Pagination, Autoplay]}
-              navigation
-              pagination={{ clickable: true }}
-              autoplay={{ delay: 2000 }}
-              loop
-              className="h-full rounded-tl-[20%]"
-            >
-              <SwiperSlide>
-                <img
-                  src={imageC4}
-                  alt="Sơ đồ C4 Capital Square"
-                  className="object-cover w-full h-full  md:rounded-tl-[20%] "
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src={imageC6}
-                  alt="Sơ đồ C6 Capital Square"
-                  className="object-cover w-full h-full md:rounded-tl-[20%]"
-                />
-              </SwiperSlide>
-            </Swiper>
-          </div>
+            <div className=" h-[400px] lg:h-[600px] md:h-[600px] sm:h-[400px] ">
+              <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 2000 }}
+                loop
+                className="h-full rounded-tl-[20%]"
+              >
+                <SwiperSlide>
+                  <img
+                    src={imageC4}
+                    alt="Sơ đồ C4 Capital Square"
+                    className="object-cover w-full h-full  md:rounded-tl-[20%] "
+                  />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img
+                    src={imageC6}
+                    alt="Sơ đồ C6 Capital Square"
+                    className="object-cover w-full h-full md:rounded-tl-[20%]"
+                  />
+                </SwiperSlide>
+              </Swiper>
+            </div>
           </div>
 
           <div className="w-full mt-5 lg:mt-0 lg:flex lg:justify-center">
@@ -573,7 +574,7 @@ export default function CapitalSquarePage() {
 
               <div className="mt-8 w-full flex justify-center">
                 <button
-                  className="bg-white text-[#174a8b] rounded-full px-6 py-2 text-sm font-medium hover:bg-[#f37021] hover:text-white transition"
+                  className="bg-white text-[#174a8b] rounded-full px-6 py-2 text-sm font-medium  border-red-500 border-2 hover:bg-[#f37021] hover:text-white transition cursor-pointer"
                   onClick={() => setIsOpen(true)}
                 >
                   TÌM HIỂU THÊM
@@ -581,13 +582,7 @@ export default function CapitalSquarePage() {
               </div>
               {isOpen && (
                 <div
-                  className="
-      fixed inset-0 z-50 grid
-      px-4
-      bg-black/50
-      pt-0 sm:pt-8 md:pt-16 lg:pt-[80px]
-      place-items-center
-    "
+                  className="fixed inset-0 z-50 grid px-4 bg-black/50 pt-0 sm:pt-8 md:pt-16 lg:pt-[80px] place-items-center"
                   onClick={() => setIsOpen(false)}
                 >
                   <div
@@ -597,23 +592,10 @@ export default function CapitalSquarePage() {
                     {/* Close button */}
                     <button
                       onClick={() => setIsOpen(false)}
-                      className="absolute top-3 right-3 z-10 p-2 bg-white border-2 border-red-500 text-red-500 rounded-full"
+                      className="absolute top-3 right-3 z-10 p-2 bg-white border-2 border-red-500 pointer- text-red-500 rounded-full cursor-pointer"
                       title="Đóng"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M6 18L18 6M6 6l12 12"
-                        />
-                      </svg>
+                    <CloseIcon/>
                     </button>
 
                     {/* Image content */}
@@ -635,12 +617,30 @@ export default function CapitalSquarePage() {
       <RegisterForm />
       <a
         href="tel:0911296979"
-        className="fixed bottom-40 right-2 z-50 flex items-center px-4 py-2 gap-2 animate-soft-shake transition-all"
+        className="fixed bottom-35 right-2 z-50 flex items-center px-4 py-2 gap-2 animate-soft-shake transition-all"
       >
-        <div className="flex items-center justify-center w-8 h-8 rounded-full border-2 border-orange-400 text-orange-500 animate-pulse-ring">
+        <span className="text-orange-500 font-bold text-xl">0911 29 69 79</span>
+        <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-orange-400 text-orange-500 animate-pulse-ring">
           <LocalPhoneIcon />
         </div>
-        <span className="text-orange-500 font-bold text-xl">0911 296 979</span>
+      </a>
+      <a
+        href="https://www.tiktok.com/@capital.square.danang?_t=ZS-8y2MxDeOfy6&_r=1"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="group fixed bottom-47 right-2 z-50 flex items-center px-4 py-2 gap-2 transition-all"
+      >
+        <div className="overflow-hidden max-w-0 group-hover:max-w-[150px] transition-all duration-500 ease-in-out">
+          <span className="text-orange-500 font-bold text-xl whitespace-nowrap block ">
+            Capital Square
+          </span>
+        </div>
+        {/* Logo giữ nguyên vị trí */}
+        <div className="flex items-center justify-center w-10 h-10 rounded-full border-2 border-orange-500  shadow-lg animate-pulse-ring">
+          <SiTiktok className="w-5 h-5 text-orange-500" />
+        </div>
+
+        {/* Chữ chạy ra khi hover */}
       </a>
     </main>
   );

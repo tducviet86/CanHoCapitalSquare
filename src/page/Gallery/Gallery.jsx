@@ -27,7 +27,7 @@ export default function Gallery() {
     image8,
   ];
 
-  const youtubeId = "cytDlTrgkVY";
+  const youtubeId = "qjZ3a-Bn-D0";
   const youtubeThumbnail = `https://img.youtube.com/vi/${youtubeId}/mqdefault.jpg`;
   const fallbackThumbnail = "/fallback-thumbnail.jpg";
 
@@ -49,8 +49,8 @@ export default function Gallery() {
               }}
               className={`px-4 sm:px-6 py-2 text-base sm:text-xl border-b-2 transition ${
                 activeTab === "images"
-                  ? "text-[#2B5192] font-bold border-[#2B5192]"
-                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-semibold"
+                  ? "text-[#2B5192] font-bold border-[#2B5192] cursor-pointer"
+                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-semibold cursor-pointer"
               }`}
             >
               XEM HÌNH ẢNH DỰ ÁN
@@ -63,8 +63,8 @@ export default function Gallery() {
               }}
               className={`px-4 sm:px-6 py-2 text-base sm:text-xl border-b-2 transition ${
                 activeTab === "video"
-                  ? "text-[#2B5192] font-bold border-[#2B5192]"
-                  : "text-[#2B5192] border-transparent hover:border-[#2B5192] hover:font-semibold"
+                  ? "text-[#2B5192] font-bold border-[#2B5192] cursor-pointer"
+                  : "text-[#2B5192] border-transparent cursor-pointer hover:border-[#2B5192] hover:font-semibold"
               }`}
             >
               XEM VIDEO DỰ ÁN
