@@ -6,16 +6,25 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-
+import image1 from "../../assets/images/z6802729042179_929142c84952466d22d75ad18face200.jpg";
+import image2 from "../../assets/images/z6802729042234_5c322430c01cf64481d643fa9d566191.jpg";
+import image4 from "../../assets/images/z6802729042299_285ea804552a7e3b0e809f379077c5f2.jpg";
+import image5 from "../../assets/images/z6802729079034_26818e5f45451ad47d3d6f4c23423709.jpg";
+import image6 from "../../assets/images/z6802729079035_871f8075ea495cbd8e475224f834ea3f.jpg";
+import image7 from "../../assets/images/z6802729079185_837bd07524ca4ad2f10926cca1b9627a.jpg";
+import image8 from "../../assets/images/z6802729079186_0a0b2f32791559c50d0d970edbe5aecf.jpg";
 export default function Gallery() {
   const [activeTab, setActiveTab] = useState("images");
   const [videoPlaying, setVideoPlaying] = useState(false);
 
   const images = [
-    "https://capitalsquare.vn/images/section-4-slider-1.png",
-    "https://capitalsquare.vn/images/section-4-slider-1.png",
-    "https://capitalsquare.vn/images/section-4-slider-1.png",
-    "https://capitalsquare.vn/images/section-4-slider-1.png",
+    image1,
+    image2,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
   ];
 
   const youtubeId = "cytDlTrgkVY";

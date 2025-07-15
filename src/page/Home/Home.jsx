@@ -9,8 +9,21 @@ import Gallery from "../Gallery/Gallery";
 import CapitalSquareCarousel from "../Capital/CapitalSquare";
 import RegisterForm from "../Register/RegisterForm";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import CloseIcon from "@mui/icons-material/Close";
+import image4 from "../../assets/images/z6802729042235_f1be76cded97e3c952c57944c3a8118b.jpg";
+
+import image5 from "../../assets/images/z6802729079034_26818e5f45451ad47d3d6f4c23423709.jpg";
+import image6 from "../../assets/images/z6802729079035_871f8075ea495cbd8e475224f834ea3f.jpg";
+import image7 from "../../assets/images/z6802729079185_837bd07524ca4ad2f10926cca1b9627a.jpg";
+import image8 from "../../assets/images/z6802729079186_0a0b2f32791559c50d0d970edbe5aecf.jpg";
+import image9 from "../../assets/images/z6802729079189_9e27448f1f8237b3b8383acf6a0581e2.jpg";
+import imageC4 from "../../assets/images/c4.png";
+import imageC6 from "../../assets/images/c6.png";
+
 export default function CapitalSquarePage() {
   const [showModal, setShowModal] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://chat.taggoai.com/v2.js";
@@ -38,8 +51,8 @@ export default function CapitalSquarePage() {
             <h1 className="text-[36px] md:text-[40px] lg:text-[64px] font-extrabold ml-0 md:ml-[-2%] lg:ml-[-3%] text-[#F47920] font-['Roboto-SemiBold'] leading-tight">
               CAPITAL SQUARE
             </h1>
-            <p className="text-[36px] md:text-[40px] lg:text-[64px] mt-[10px] leading-[1.1] ml-0 md:ml-[100px] lg:ml-[220px]">
-              Vị thế Phồn vinh
+            <p className="text-[36px] md:text-[40px] lg:text-[64px] mt-[10px] leading-[1.1] ml-0 md:ml-[100px] lg:ml-[220px] font-['Roboto-SemiBold']">
+              VỊ THẾ PHỒN VINH
             </p>
           </div>
         </div>
@@ -224,19 +237,34 @@ export default function CapitalSquarePage() {
                       Sổ đỏ sở hữu lâu dài
                     </div>
                   </div>
+                  <div className="flex flex-col md:flex-row">
+                    <div className="w-full md:w-[24%] text-orange-500 font-bold">
+                      Tầng cao
+                    </div>
+                    <div className="w-[76%] text-[16px] text-[#212529] font-medium">
+                      24-28 tầng
+                    </div>
+                  </div>
+                  <div className="flex flex-col md:flex-row">
+                    <div className="w-full md:w-[24%] text-orange-500 font-bold">
+                      Chiều cao căn hộ
+                    </div>
+                    <div className="w-[76%] text-[16px] text-[#212529] font-medium">
+                      3,5m
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <div className="relative w-full h-[850px] lg:h-screen lg:-mb-135 -mb-[135px] z-20">
+        <div className="relative w-full h-[650px] lg:h-[850px]  md:-mb-135 -mb-[135px] z-20">
           {/* Ảnh nền */}
           <div
-            className="absolute inset-0 bg-no-repeat bg-center transition-all duration-300 ease-in-out"
+            className="absolute inset-0 bg-no-repeat bg-center  transition-all duration-300 ease-in-out"
             style={{
-              backgroundImage:
-                "url('https://capitalsquare.vn/wp-content/themes/capitalsquare/dist/images/section-2-1.png')",
+              backgroundImage: `url(${image9})`,
               backgroundSize: "cover",
               clipPath: "inset(0 25% 0 0)",
             }}
@@ -275,7 +303,7 @@ export default function CapitalSquarePage() {
 
             {/* Chữ phụ - luôn hiển thị, style khác nhau theo breakpoint */}
             <div className="mt-8 px-4 w-full">
-              <p className="text-white  text-sm sm:text-base lg:text-base font-semibold text-center lg:text-left lg:absolute lg:bottom-20 lg:pl-[35%] lg:max-w-[800px] leading-relaxed">
+              <p className="text-white uppercase text-base sm:text-xl lg:text-xl font-extrabold  lg:text-left lg:absolute lg:bottom-60 lg:pl-[35%] lg:max-w-[800px] leading-relaxed">
                 Capital Square
                 <br />
                 Là mạch nối quá khứ - hiện tại và tương lai, giữa thiên nhiên
@@ -423,12 +451,58 @@ export default function CapitalSquarePage() {
           <div className="hidden md:block w-full md:w-[44%] h-[1000px] bg-[#e8e8e8]"></div>
         </div>
 
-        <div className="hidden md:block w-full h-[400px] md:w-[800px] md:h-[650px] mt-8 md:mt-20 md:absolute md:left-[70%] md:top-95 md:-translate-x-1/2 md:-translate-y-1/2 z-20">
-          <img
-            src="https://capitalsquare.vn/images/section-3-1-slider-1.png"
+        <div className="hidden md:block w-full h-[400px] md:w-[800px] md:h-[650px] mt-8 md:mt-10 md:absolute md:left-[70%] md:top-95 md:-translate-x-1/2 md:-translate-y-1/2 z-20">
+          {/* <img
+            src={image10}
             alt="Luxury yacht at marina"
             className="object-cover rounded-tr-[20%] w-full h-full"
-          />
+          /> */}
+          <div className=" h-[400px] lg:h-[600px] md:h-[600px] sm:h-[400px] ">
+            <Swiper
+              modules={[Navigation, Pagination, Autoplay]}
+              navigation
+              pagination={{ clickable: true }}
+              autoplay={{ delay: 2000 }}
+              loop
+              className="h-full rounded-tr-[20%]"
+            >
+              <SwiperSlide>
+                <img
+                  src={image9}
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full  md:rounded-tr-[20%] "
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image8}
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full md:rounded-tr-[20%]"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image7}
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full md:rounded-tr-[20%]"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image6}
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full md:rounded-tr-[20%]"
+                />
+              </SwiperSlide>
+              <SwiperSlide>
+                <img
+                  src={image5}
+                  alt="Bản đồ minh đường tụ thủy"
+                  className="object-cover w-full h-full md:rounded-tr-[20%]"
+                />
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </div>
       </div>
 
@@ -441,40 +515,36 @@ export default function CapitalSquarePage() {
               className="object-cover rounded-tr-[20%] w-[98%] h-full"
             />
           </div>
-          <div className=" h-[100%] ">
+          <div className=" h-[400px] lg:h-[800px] md:h-[600px] sm:h-[400px] ">
+          <div className=" h-[400px] lg:h-[600px] md:h-[600px] sm:h-[400px] ">
             <Swiper
               modules={[Navigation, Pagination, Autoplay]}
               navigation
               pagination={{ clickable: true }}
               autoplay={{ delay: 2000 }}
               loop
+              className="h-full rounded-tl-[20%]"
             >
               <SwiperSlide>
                 <img
-                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
-                  alt="Bản đồ minh đường tụ thủy"
+                  src={imageC4}
+                  alt="Sơ đồ C4 Capital Square"
                   className="object-cover w-full h-full  md:rounded-tl-[20%] "
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
-                  alt="Bản đồ minh đường tụ thủy"
-                  className="object-cover w-full h-full md:rounded-tl-[20%]"
-                />
-              </SwiperSlide>
-              <SwiperSlide>
-                <img
-                  src="https://capitalsquare.vn/images/section-3-slider-1.png"
-                  alt="Bản đồ minh đường tụ thủy"
+                  src={imageC6}
+                  alt="Sơ đồ C6 Capital Square"
                   className="object-cover w-full h-full md:rounded-tl-[20%]"
                 />
               </SwiperSlide>
             </Swiper>
           </div>
+          </div>
 
           <div className="w-full mt-5 lg:mt-0 lg:flex lg:justify-center">
-            <div className="px-4 md:px-6 md:pr-4 bg-[#2B5192] lg:pt-12 lg:pr-40 lg:pl-[80px] flex flex-col justify-center md:rounded-tr-[20%] text-right items-end">
+            <div className="px-4 md:px-6 md:pr-4 bg-[#2B5192] lg:pt-12 lg:pr-40 lg:pl-[80px] flex flex-col justify-center text-right items-end">
               <h2 className="text-[#fff] text-[28px] md:text-[44px] lg:text-[56px] uppercase mb-4 font-['Roboto-Light'] leading-snug md:leading-snug lg:leading-normal">
                 BIỂU TƯỢNG <br />
                 KIẾN TRÚC <br />
@@ -502,10 +572,59 @@ export default function CapitalSquarePage() {
               </div>
 
               <div className="mt-8 w-full flex justify-center">
-                <button className="bg-white text-[#174a8b] rounded-full px-6 py-2 text-sm font-medium hover:bg-[#f37021] hover:text-white transition">
+                <button
+                  className="bg-white text-[#174a8b] rounded-full px-6 py-2 text-sm font-medium hover:bg-[#f37021] hover:text-white transition"
+                  onClick={() => setIsOpen(true)}
+                >
                   TÌM HIỂU THÊM
                 </button>
               </div>
+              {isOpen && (
+                <div
+                  className="
+      fixed inset-0 z-50 grid
+      px-4
+      bg-black/50
+      pt-0 sm:pt-8 md:pt-16 lg:pt-[80px]
+      place-items-center
+    "
+                  onClick={() => setIsOpen(false)}
+                >
+                  <div
+                    className="relative bg-white rounded-xl overflow-hidden w-full max-w-4xl max-h-[90vh] shadow-2xl"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    {/* Close button */}
+                    <button
+                      onClick={() => setIsOpen(false)}
+                      className="absolute top-3 right-3 z-10 p-2 bg-white border-2 border-red-500 text-red-500 rounded-full"
+                      title="Đóng"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M6 18L18 6M6 6l12 12"
+                        />
+                      </svg>
+                    </button>
+
+                    {/* Image content */}
+                    <img
+                      src={image4}
+                      alt="Chi tiết"
+                      className="w-full h-auto max-h-[90vh] object-contain"
+                    />
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>

@@ -27,8 +27,7 @@ function Footer() {
           </div>
         </div>
 
-        {/* Column: Tài liệu */}
-        {/* Column: Tài liệu */}
+     
         <div>
           <h3 className="font-semibold mb-2 border-l-4 border-orange-500 pl-2">
             Tải tài liệu dự án
